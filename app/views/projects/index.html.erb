@@ -1,0 +1,81 @@
+<!--<div id="home">
+	<h3>You want print?</h3>
+	<p>We'll give you print</p>
+</div> -->
+<h2 id="all"></h2>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	<%= render @projects %>
+	
+<h2 id="brand">Brand Design</h2>
+	<% @projects.each_with_index do |project, index| %>
+		<% iteration = index%3 %>
+  		<% if iteration == 2 %>
+			<%= "<div class='work'>#{image_tag("content/circles/Circles_0#{Circle.random.id}.gif")}</div>".html_safe %>
+		<% end %>
+		<%= render project %>
+	<% end %>
+
+<h2 id="exhibition">Exhibition Design</h2>
+	<%= render @projects %>
+
+<h2 id="information">Information Design</h2>
+	<%= render @projects %>
+	<%= render @projects %>
+	
+<h2 id="interaction">Interaction Design</h2>
+	<%= render @projects %>
+	
+<h2 id="motion">Motion Design</h2>
+	<%= render @projects %>
+	
+<h2 id="packaging">Packaging Design</h2>
+	<%= render @projects %>
+
+<h2 id="print">Print Design</h2>
+	<%= render @projects %>
+	<%= render @projects %>
+
+<h2 id="product">Product Design</h2>
+	<%= render @projects %>
+	
+<h2 id="service">Service Design</h2>
+	<%= render @projects %>
+	<%= render @projects %>
+	
+<h2 id="web">Web Design</h2>
+	<%= render @projects %>
+	<%= render @projects %>

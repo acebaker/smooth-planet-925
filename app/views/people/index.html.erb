@@ -1,0 +1,22 @@
+<h2 id="all" class="scroll">All</h2>
+	<%= render @people %>
+
+<h2 id="design_studies" class="scroll">Design Studies</h2>
+	<% @ds.each do |person| %>
+		<%= render person %>
+	<% end %>
+	
+<h2 id="industrial_design" class="scroll">Industrial Design</h2>
+	<% @id.each do |person| %>
+		<%= render person %>
+	<% end %>
+
+<h2 id="master_of_fine_arts" class="scroll">Master of Fine Arts</h2>
+	<% @mfa.each do |person| %>
+		<%= render person %>
+	<% end %>
+
+<h2 id="visual_communication_design" class="scroll">Visual Communication Design</h2>
+	<% @vcd.each do |person| %>
+		<%= render person %>
+	<% end %>

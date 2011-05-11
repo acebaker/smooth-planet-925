@@ -1,0 +1,30 @@
+<header>
+	<div class="hack"></div>
+	<%= link_to logo, projects_path %></h1>
+	<nav id="main">
+		<ul>
+			<li><%= link_to "Work", projects_path %></li>
+			<li><%= link_to "People", people_path %></li>
+			<li><%= link_to "Show Info", show_information_path %></li>
+			<li><%= link_to "About UW Design", about_uw_design_path %></li>
+		</ul>
+	</nav>
+	<nav id="subnav">
+		<% if defined?(@sub_image).nil? %>
+			<%= print "var is not defined\n" %>
+		<% else %>
+			<%= image_tag("general/#{@sub_image}.png", :alt => @sub_image ) %>
+		<% end %>
+		<ul>
+			<% if defined?(@navs).nil? %>
+				<%= print "var is not defined\n" %>
+			<% else %>
+				<li><a href='#all' class="scroll">All</a></li>
+			
+				<% @navs.each do |nav| %>
+				<li><a href='/#<%= nav.name.downcase.gsub(/ /,'_') %>' class="scroll"><%= nav.nav_name.gsub(/,/,"<br />").html_safe %></a></li>
+				<% end %>
+			<% end %>
+		</ul>
+	</nav><!-- end #categories -->
+</header>

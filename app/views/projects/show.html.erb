@@ -1,0 +1,12 @@
+<h2><%= @project.title %></h2>
+<div id="images">
+	<%= image_tag("content/projects/large/#{@project.image_url}", :alt => @project.title )%>
+</div>
+<h4>See more projects in:<br />
+	<ul>
+<% @project.categories.each do |category| %>
+<li><%= link_to category.name, root_path(:anchor => category.name.downcase) %></li>
+<% end %>
+	</ul>
+</h4>
+

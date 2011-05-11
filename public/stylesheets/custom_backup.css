@@ -1,0 +1,206 @@
+/* @override http://localhost:3000/stylesheets/custom.css?1303794397 
+
+@font-face { font-family: TitlingGothicBold; src: url('fonts/TitlingGothicFBCondBold.otf'); } 
+
+@font-face { font-family: TitlingGothicMedium; src: url('fonts/TitlingGothicFBCompMedium.otf'); } 
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+h1, h2, h3, h1 a {
+	font-family: "TitlingGothicBold", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+a:active {
+	text-decoration: underline;
+}
+
+header .logo {
+	margin: 0px;
+	margin-top: -14px;
+	padding: 0px;
+	width: 150px;
+	margin-right: 0px;
+	float: left;
+	z-index: 10000;
+}
+
+header .hack {
+	background-image: url("../images/general/headerbg.png");
+	background-repeat: repeat-x;
+	width: 191px;
+	height: 89px;
+	float:left;
+	margin-top: -14px;
+	margin-right: -1px;
+}
+
+body {
+	width: auto;
+	height: 100%;
+	position: absolute;
+}
+
+header {
+	height: 75px;
+	padding-top: 14px;
+	padding-left: 190px; 
+	width: 100%;
+	position: fixed;
+	top: 24px;
+	z-index: 9999;
+}
+header a {
+	color: black;
+	font-size: .8em;
+	text-decoration: none;
+	font-weight:  bold;
+}
+
+nav#main {
+	float: left;
+	background-image: url("../images/general/headerbg.png");
+	background-repeat: repeat-x;
+	height: 89px;
+	margin-top: -14px;
+	overflow: hidden;
+}
+
+nav#main ul li {
+	float: left;
+	width: 150px;
+	border-top: solid 1px black;
+	padding-top: 10px;
+	margin-top: 14px;
+	margin-right: 30px;
+	list-style-type: none;
+}
+
+nav#main ul li:hover {
+	border-top: solid 4px;
+	padding-top: 7px;
+	border-color: black;
+}
+
+nav#main ul li:active {
+	border-top: solid 4px black;
+	padding-top: 7px;
+}
+
+header nav#subnav {
+	position: fixed;
+	top: 160px;
+	left: 20px;
+}
+
+header nav#subnav ul li {
+	margin-bottom: 20px;
+}
+
+header nav#subnav ul li a {
+	color: black;
+}
+
+#content {
+	height: 100%;
+	margin-top: 0px;
+	margin-left: 190px;
+	margin-right: 20px;
+	margin-bottom: 40px;
+}
+
+.work {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.work h4 {
+	font-size: .7em;
+}
+
+h2, #home {
+	clear: both;
+	padding-top: 130px;
+	margin-bottom: 10px;
+	border-top: 1px solid #fff700;
+}
+
+#home {
+	height: 100%;
+}
+
+#home h3 {
+	font-size: 4em;
+}
+
+#person_info, #subnav {
+	position: fixed;
+	width: 150px;
+	top: 160px;
+	left: 20px;
+}
+
+h2#person_name {
+	padding-top: 10px;
+	padding-bottom: 6px;
+	border-top: 1px solid #fff700;
+	border-bottom: 1px solid #fff700;
+}
+
+h4.person_name {
+	background: rgba(255,255,255, 0.8);
+	position: relative;
+	margin-top: -30px;
+	margin-bottom: 20px;
+	width: 100%;
+	height: 22px;
+	line-height: 22px;
+	z-index: 999;
+}
+h4.person_name li a {
+	padding-left: 10px;
+	z-index: 999;
+	text-decoration: none;
+	color: black;
+}
+
+h4.person_name:hover {
+	background: rgba(255,255,0,0.8);
+}
+
+#person_image {
+	margin-top: 30px;
+}
+
+#person_contact {
+	margin-top: 20px;
+}
+
+#person_about {
+	padding-top: 160px;
+	font-size: 3em;
+}
+
+h3.subhead {
+	padding-top: 160px;
+	font-size: 2em;
+	font-style: italic;
+	font-family: Georgia, "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+h2.focalpoint {
+	font-size: 12em;
+	color: #fff700;
+	text-transform: uppercase;
+	padding-top: 40px;
+	line-height: 160px;
+	font-family: "TitlingGothicMedium", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	border-bottom: 1px solid #fff700;
+}
+*/
