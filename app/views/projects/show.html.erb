@@ -5,7 +5,7 @@
 <h4>See more projects in:<br />
 	<ul>
 <% @project.categories.each do |category| %>
-<li><%= link_to category.name, root_path(:anchor => category.name.downcase) %></li>
+<li><%= link_to category.name, projects_path(:anchor => category.name.downcase) %></li>
 <% end %>
 	</ul>
 </h4>

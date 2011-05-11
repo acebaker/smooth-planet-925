@@ -34153,3 +34153,357 @@ Rendered layouts/_analytics.html.erb (0.3ms)
 Rendered layouts/_header.html.erb (1.8ms)
 Rendered projects/index.html.erb within layouts/application (601.0ms)
 Completed 200 OK in 664ms (Views: 603.9ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-05-11 15:23:02 -0700
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (2.3ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  [1m[35mCategory Load (2.6ms)[0m  SELECT "categories".* FROM "categories"
+Rendered projects/_project.html.erb (7.3ms)
+Rendered projects/_project.html.erb (7.6ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.4ms)
+Rendered projects/_project.html.erb (7.5ms)
+Rendered projects/_project.html.erb (7.2ms)
+Rendered projects/_project.html.erb (36.6ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (7.3ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (7.4ms)
+Rendered projects/_project.html.erb (7.4ms)
+Rendered projects/_project.html.erb (36.7ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.3ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (36.1ms)
+Rendered projects/_project.html.erb (7.2ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (1.2ms)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "circles"[0m
+  [1m[35mCircle Load (0.3ms)[0m  SELECT "circles".* FROM "circles" LIMIT 1 OFFSET 1
+Rendered projects/_project.html.erb (1.5ms)
+Rendered projects/_project.html.erb (1.3ms)
+Rendered projects/_project.html.erb (1.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "circles"[0m
+  [1m[35mCircle Load (0.4ms)[0m  SELECT "circles".* FROM "circles" LIMIT 1 OFFSET 7
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (36.3ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.2ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (7.4ms)
+Rendered projects/_project.html.erb (38.1ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (4.7ms)
+Rendered projects/index.html.erb within layouts/application (592.4ms)
+Completed 200 OK in 721ms (Views: 596.4ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/projects/2" for 127.0.0.1 at 2011-05-11 15:23:04 -0700
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 2 )[0m
+Rendered projects/show.html.erb within layouts/application (53.8ms)
+Completed   in 99ms
+
+ActionView::Template::Error (undefined method `root_path' for #<#<Class:0x00000102aaaa98>:0x00000102a9edb0>):
+    5: <h4>See more projects in:<br />
+    6: 	<ul>
+    7: <% @project.categories.each do |category| %>
+    8: <li><%= link_to category.name, root_path(:anchor => category.name.downcase) %></li>
+    9: <% end %>
+    10: 	</ul>
+    11: </h4>
+  app/views/projects/show.html.erb:8:in `block in _app_views_projects_show_html_erb___1983499563309364030_2169825860__1026619798486385846'
+  app/views/projects/show.html.erb:7:in `_app_views_projects_show_html_erb___1983499563309364030_2169825860__1026619798486385846'
+  app/controllers/projects_controller.rb:22:in `show'
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.6ms)
+
+
+Started GET "/projects/2" for 127.0.0.1 at 2011-05-11 15:24:07 -0700
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 2) LIMIT 1
+  [1m[36mCategory Load (0.8ms)[0m  [1mSELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 2 )[0m
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered projects/show.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 50ms (Views: 35.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-05-11 15:24:09 -0700
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (2.2ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mCategory Load (2.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Rendered projects/_project.html.erb (13.6ms)
+Rendered projects/_project.html.erb (35.4ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (7.4ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (7.3ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (37.1ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (7.3ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (35.6ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (7.3ms)
+Rendered projects/_project.html.erb (35.1ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (1.2ms)
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "circles"
+  [1m[36mCircle Load (0.3ms)[0m  [1mSELECT "circles".* FROM "circles" LIMIT 1 OFFSET 3[0m
+Rendered projects/_project.html.erb (1.4ms)
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (1.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "circles"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "circles".* FROM "circles" LIMIT 1 OFFSET 3[0m
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (7.2ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (36.6ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.7ms)
+Rendered projects/_project.html.erb (7.2ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered projects/index.html.erb within layouts/application (581.2ms)
+Completed 200 OK in 616ms (Views: 584.6ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2011-05-11 15:24:13 -0700
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 3) LIMIT 1
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 3 )[0m
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered projects/show.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 78ms (Views: 34.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/content/projects/large/fragilestate.jpg" for 127.0.0.1 at 2011-05-11 15:24:13 -0700
+
+ActionController::RoutingError (No route matches "/images/content/projects/large/fragilestate.jpg"):
+  
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-05-11 15:24:14 -0700
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (2.1ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mCategory Load (2.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Rendered projects/_project.html.erb (12.6ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (7.2ms)
+Rendered projects/_project.html.erb (35.5ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.7ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.7ms)
+Rendered projects/_project.html.erb (35.3ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (7.4ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (6.7ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (39.1ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.2ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (7.3ms)
+Rendered projects/_project.html.erb (7.2ms)
+Rendered projects/_project.html.erb (7.3ms)
+Rendered projects/_project.html.erb (1.3ms)
+Rendered projects/_project.html.erb (1.2ms)
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "circles"
+  [1m[36mCircle Load (0.3ms)[0m  [1mSELECT "circles".* FROM "circles" LIMIT 1 OFFSET 3[0m
+Rendered projects/_project.html.erb (1.6ms)
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (1.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "circles"
+  [1m[36mCircle Load (0.4ms)[0m  [1mSELECT "circles".* FROM "circles" LIMIT 1 OFFSET 1[0m
+Rendered projects/_project.html.erb (1.4ms)
+Rendered projects/_project.html.erb (1.3ms)
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (7.3ms)
+Rendered projects/_project.html.erb (35.8ms)
+Rendered projects/_project.html.erb (7.3ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered projects/index.html.erb within layouts/application (585.7ms)
+Completed 200 OK in 648ms (Views: 588.6ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/projects/4" for 127.0.0.1 at 2011-05-11 15:24:21 -0700
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 4) LIMIT 1
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 4 )[0m
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered projects/show.html.erb within layouts/application (60.3ms)
+Completed 200 OK in 78ms (Views: 63.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-05-11 15:24:23 -0700
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (1.9ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mCategory Load (2.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Rendered projects/_project.html.erb (40.2ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (7.4ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (36.9ms)
+Rendered projects/_project.html.erb (7.7ms)
+Rendered projects/_project.html.erb (7.2ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.7ms)
+Rendered projects/_project.html.erb (35.6ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (35.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (1.4ms)
+Rendered projects/_project.html.erb (1.2ms)
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "circles"
+  [1m[36mCircle Load (0.3ms)[0m  [1mSELECT "circles".* FROM "circles" LIMIT 1 OFFSET 2[0m
+Rendered projects/_project.html.erb (1.4ms)
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (1.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "circles"
+  [1m[36mCircle Load (0.3ms)[0m  [1mSELECT "circles".* FROM "circles" LIMIT 1 OFFSET 5[0m
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.7ms)
+Rendered projects/_project.html.erb (36.0ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered layouts/_analytics.html.erb (0.4ms)
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered projects/index.html.erb within layouts/application (606.8ms)
+Completed 200 OK in 640ms (Views: 609.8ms | ActiveRecord: 5.0ms)
