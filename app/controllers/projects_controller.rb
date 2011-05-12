@@ -15,7 +15,6 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @projects }
-      format.iphone #index.iphone.erb
     end
   end
   
@@ -25,7 +24,6 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @projects }
-      format.iphone #index.iphone.erb
     end
   end
 end
