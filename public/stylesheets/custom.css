@@ -16,6 +16,17 @@ h1, h2, h3, h1 a {
 	font-family: "TitlingGothicBold", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
+.clear {
+	height: 0;
+	display: block;
+	clear: both;
+}
+
+#container {
+	width:auto;
+	max-width:2000px;
+}
+
 header .logo {
 	margin: 0px;
 	/*margin-top: -14px;*/
@@ -132,11 +143,16 @@ header nav#subnav ul li a {
 	font-size: .7em;
 }
 
-h2, #home {
+.category, .project {
 	clear: both;
+	display: block;
 	padding-top: 180px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #fff700;
+}
+
+h2 {
 	margin-bottom: 10px;
-	border-top: 1px solid #fff700;
 	letter-spacing: 0.4em;
 	font-weight: normal;
 	font-size: .8em;

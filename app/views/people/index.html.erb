@@ -1,22 +1,29 @@
-<h2 id="all" class="scroll">All</h2>
+<div id="all" class="category"><h2>All</h2>
 	<%= render @people %>
+	<div class="clear"></div>
+</div> <!-- end #all -->
 
-<h2 id="design_studies" class="scroll">Design Studies</h2>
+<div id="design_studies" class="category"><h2>Design Studies</h2>
 	<% @ds.each do |person| %>
 		<%= render person %>
 	<% end %>
-	
-<h2 id="industrial_design" class="scroll">Industrial Design</h2>
+	<div class="clear"></div>
+</div> <!-- end #design_studies -->
+<div id="industrial_design" class="category"><h2>Industrial Design</h2>
 	<% @id.each do |person| %>
 		<%= render person %>
 	<% end %>
-
-<h2 id="master_of_fine_arts" class="scroll">Master of Fine Arts</h2>
+	<div class="clear"></div>
+</div> <!-- end industrial_design -->
+<div id="master_of_fine_arts" class="category"><h2>Master of Fine Arts</h2>
 	<% @mfa.each do |person| %>
 		<%= render person %>
 	<% end %>
-
-<h2 id="visual_communication_design" class="scroll">Visual Communication Design</h2>
+	<div class="clear"></div>
+</div> <!-- end #master_of_fine_arts -->
+<div id="visual_communication_design" class="category"><h2>Visual Communication Design</h2>
 	<% @vcd.each do |person| %>
 		<%= render person %>
 	<% end %>
+	<div class="clear"></div>
+</div> <!-- end #visual_communication_design -->

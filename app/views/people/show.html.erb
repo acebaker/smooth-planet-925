@@ -10,19 +10,22 @@
 <p id="person_about"><%= @person.about %></p>
 
 <% @person.projects.each do |project| %>
-	<h2 id="<%= project.name.downcase.gsub(/ /,'_') %>" class="scroll"><%= project.name %></h2>
-	<p class="description"><%= project.description %></p>
-	<div id="images">
-		<% project.images.each do |image| %>
-			<%= image_tag("content/projects/large/#{image.image_url}", :alt => image.image_url )%>
-		<% end %>
-	</div>
-	
-	<h4 class="see_more">See more projects in:<br />
-		<ul>
-			<% project.categories.each do |category| %>
-			<li><%= link_to category.name + " Design", projects_path(:anchor => category.name.downcase) %></li>
+	<div id="<%= project.name.downcase.gsub(/ /,'_') %>" class="project"><h2><%= project.name %></h2>
+		<p class="description"><%= project.description %></p>
+		<div id="images">
+			<% project.images.each do |image| %>
+				<%= image_tag("content/projects/large/#{image.image_url}", :alt => image.image_url )%>
 			<% end %>
-		</ul>
-	</h4>
+		</div>
+	
+	
+		<h4 class="see_more">See more projects in:<br />
+			<ul>
+				<% project.categories.each do |category| %>
+				<li><%= link_to category.name + " Design", projects_path(:anchor => category.name.downcase) %></li>
+				<% end %>
+			</ul>
+		</h4>
+		<div class="clear"></div>
+	</div> <!-- end #<%= project.name.downcase.gsub(/ /,'_') %> -->
 <% end %>

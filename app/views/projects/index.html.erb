@@ -1,4 +1,4 @@
-<h2 id="all"></h2>
+<div id="all" class="category">
 	<%= render @projects %>
 	<%= render @projects %>
 	<%= render @projects %>
@@ -35,8 +35,10 @@
 	<%= render @projects %>
 	<%= render @projects %>
 	<%= render @projects %>
-	
-<h2 id="brand">Brand Design</h2>
+	<div class="clear"></div>
+</div> <!-- end #all -->
+
+<div id="brand" class="category"><h2>Brand Design</h2>
 	<% @projects.each_with_index do |project, index| %>
 		<% iteration = index%3 %>
   		<% if iteration == 2 %>
@@ -44,34 +46,54 @@
 		<% end %>
 		<%= render project %>
 	<% end %>
+	<div class="clear"></div>
+</div> <!-- end #brand -->
 
-<h2 id="exhibition">Exhibition Design</h2>
+<div id="exhibition" class="category"><h2>Exhibition Design</h2>
 	<%= render @projects %>
+	<div class="clear"></div>
+</div> <!-- end exhibition -->
 
-<h2 id="information">Information Design</h2>
+<div id="information" class="category"><h2>Information Design</h2>
 	<%= render @projects %>
 	<%= render @projects %>
-	
-<h2 id="interaction">Interaction Design</h2>
-	<%= render @projects %>
-	
-<h2 id="motion">Motion Design</h2>
-	<%= render @projects %>
-	
-<h2 id="packaging">Packaging Design</h2>
-	<%= render @projects %>
+	<div class="clear"></div>
+</div> <!-- end #information -->
 
-<h2 id="print">Print Design</h2>
+<div id="interaction" class="category"><h2>Interaction Design</h2>
 	<%= render @projects %>
-	<%= render @projects %>
+	<div class="clear"></div>
+</div> <!-- end #interaction -->
 
-<h2 id="product">Product Design</h2>
+<div id="motion" class="category"><h2>Motion Design</h2>
 	<%= render @projects %>
+	<div class="clear"></div>
+</div> <!-- end #motion -->
 	
-<h2 id="service">Service Design</h2>
+<div id="packaging" class="category"><h2>Packaging Design</h2>
+	<%= render @projects %>
+	<div class="clear"></div>
+</div> <!-- end #packaging -->
+
+<div id="print" class="category"><h2>Print Design</h2>
 	<%= render @projects %>
 	<%= render @projects %>
+	<div class="clear"></div>
+</div> <!-- end #print -->
+
+<div id="product" class="category"><h2>Product Design</h2>
+	<%= render @projects %>
+	<div class="clear"></div>
+</div> <!-- end #product -->
+
+<div id="service" class="category"><h2>Service Design</h2>
+	<%= render @projects %>
+	<%= render @projects %>
+	<div class="clear"></div>
+</div> <!-- end #service -->
 	
-<h2 id="web">Web Design</h2>
+<div id="web" class="category"><h2>Web Design</h2>
 	<%= render @projects %>
 	<%= render @projects %>
+	<div class="clear"></div>
+</div> <!-- end #web -->

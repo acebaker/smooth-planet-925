@@ -18,10 +18,12 @@
 		
 	</head>
 	<body>
-		<%= render 'layouts/header' %>
-		<div id="content">
-			<%= yield %>
-			<a href='#all' id="bottom"class="scroll">Back to Top</a>
-		</div> <!-- end content -->
+		<div id="container">
+			<%= render 'layouts/header' %>
+			<div id="content">
+				<%= yield %>
+				<a href='#all' id="bottom"class="scroll">Back to Top</a>
+			</div> <!-- end #content -->
+		</div> <!-- end #container -->
 	</body>
 </html>
