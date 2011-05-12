@@ -165,23 +165,23 @@ h2#person_name {
 h4.person_name {
 	background: rgba(255,255,255, 0.8);
 	position: relative;
-	margin-top: -30px;
-	margin-bottom: 20px;
+	margin-top: 0;
+	/*margin-bottom: 20px;
 	width: 100%;
 	height: 22px;
 	line-height: 22px;
-	z-index: 999;
+	z-index: 999; */
 }
 h4.person_name li a {
-	padding-left: 10px;
+	/*padding-left: 10px;*/
 	z-index: 999;
 	text-decoration: none;
-	color: black;
+	color: rgb(150,150,150);
 }
-
+/*
 h4.person_name:hover {
 	background: rgba(255,255,0,1);
-}
+} */
 #person_image {
 	margin-top: 30px;
 }

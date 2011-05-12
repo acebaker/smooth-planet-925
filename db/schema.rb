@@ -10,14 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110511162220) do
+ActiveRecord::Schema.define(:version => 20110512044031) do
 
 # Could not dump table "categories" because of following StandardError
 #   Unknown type '' for column 'nav_name'
 
   create_table "categories_projects", :id => false, :force => true do |t|
-    t.decimal "project_id"
-    t.decimal "category_id"
+    t.integer "project_id"
+    t.integer "category_id"
   end
 
   create_table "circles", :force => true do |t|
@@ -38,11 +38,15 @@ ActiveRecord::Schema.define(:version => 20110511162220) do
   end
 
   create_table "people", :force => true do |t|
-    t.text   "image_url"
     t.string "fname"
     t.string "lname"
     t.string "contact"
     t.string "about"
+  end
+
+  create_table "people_projects", :id => false, :force => true do |t|
+    t.integer "project_id"
+    t.integer "person_id"
   end
 
   create_table "profile_images", :force => true do |t|
@@ -50,16 +54,19 @@ ActiveRecord::Schema.define(:version => 20110511162220) do
     t.string "thumb_url"
   end
 
-  create_table "projects", :force => true do |t|
-    t.string   "title"
-    t.string   "image_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "project_images", :force => true do |t|
+    t.string "image_url"
   end
 
-  create_table "projects_categories", :id => false, :force => true do |t|
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.string   "image_url"
+    t.datetime "nav_name"
+  end
+
+  create_table "projects_project_images", :id => false, :force => true do |t|
     t.integer "project_id"
-    t.integer "category_id"
+    t.integer "project_image_id"
   end
 
 end

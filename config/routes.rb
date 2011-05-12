@@ -2,6 +2,7 @@ UwTest::Application.routes.draw do
   resources :projects
   resources :categories
   resources :people
+  resources :projecimages
   
   match '/about_uw_design', :to => 'pages#about_uw_design'
   match '/show_information', :to => 'pages#show_information'

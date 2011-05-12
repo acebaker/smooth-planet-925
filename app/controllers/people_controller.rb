@@ -19,6 +19,8 @@ class PeopleController < ApplicationController
     
     @person = Person.find(params[:id])
     @title = @person.fname + " " + @person.lname
+    #@navs = @person.projects.all.sort! { |a,b| a.name.downcase <=> b.name.downcase }
+    
     
     respond_to do |format|
       format.html # index.html.erb
