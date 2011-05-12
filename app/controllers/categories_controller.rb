@@ -7,6 +7,7 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @categories }
+      format.iphone #index.iphone.erb
     end
   end
 

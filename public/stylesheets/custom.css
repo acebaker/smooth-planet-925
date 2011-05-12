@@ -12,6 +12,10 @@
 	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
+a img {
+	border: none;
+}
+
 h1, h2, h3, h1 a {
 	font-family: "TitlingGothicBold", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }

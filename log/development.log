@@ -53986,3 +53986,545 @@ Rendered layouts/_analytics.html.erb (0.3ms)
 Rendered layouts/_header.html.erb (30.4ms)
 Rendered people/index.html.erb within layouts/application (95.5ms)
 Completed 200 OK in 177ms (Views: 99.2ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-12 11:41:41 -0700
+  Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (4.6ms)[0m  SELECT "people".* FROM "people"
+  [1m[36mMajor Load (0.3ms)[0m  [1mSELECT "majors".* FROM "majors"[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Design Studies') LIMIT 1
+  [1m[36mPerson Load (30.3ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 2 )[0m
+  [1m[35mMajor Load (0.2ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Industrial Design') LIMIT 1
+  [1m[36mPerson Load (3.5ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 3 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Master of Fine Arts') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 4 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Visual Communication Design') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 1 )[0m
+Rendered people/_person.html.erb (16.8ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (29.9ms)
+Rendered people/index.html.erb within layouts/application (95.5ms)
+Completed 200 OK in 177ms (Views: 99.2ms | ActiveRecord: 39.4ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-12 12:00:53 -0700
+
+SyntaxError (/Users/jeremyjuel/Sites/Rails/smooth-planet-925/app/controllers/application_controller.rb:12: syntax error, unexpected tAMPER, expecting keyword_end
+...t.env["HTTP_USER_AGENT"] &amp;&amp; request.env["HTTP_USER_A...
+...                               ^
+/Users/jeremyjuel/Sites/Rails/smooth-planet-925/app/controllers/application_controller.rb:15: syntax error, unexpected keyword_end, expecting $end):
+  app/controllers/people_controller.rb:1:in `<top (required)>'
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.9ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-12 12:03:02 -0700
+
+SyntaxError (/Users/jeremyjuel/Sites/Rails/smooth-planet-925/app/controllers/application_controller.rb:12: syntax error, unexpected tAMPER, expecting keyword_end
+...t.env["HTTP_USER_AGENT"] &amp;&amp; request.env["HTTP_USER_A...
+...                               ^
+/Users/jeremyjuel/Sites/Rails/smooth-planet-925/app/controllers/application_controller.rb:15: syntax error, unexpected keyword_end, expecting $end):
+  app/controllers/people_controller.rb:1:in `<top (required)>'
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.7ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.3ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-12 12:03:26 -0700
+
+SyntaxError (/Users/jeremyjuel/Sites/Rails/smooth-planet-925/app/controllers/application_controller.rb:15: syntax error, unexpected keyword_end, expecting $end):
+  app/controllers/people_controller.rb:1:in `<top (required)>'
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.9ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-12 12:03:59 -0700
+  Processing by PeopleController#index as HTML
+Completed   in 1ms
+
+NameError (undefined local variable or method `amp' for #<PeopleController:0x000001012d8f50>):
+  app/controllers/application_controller.rb:12:in `iphone_request?'
+  app/controllers/application_controller.rb:8:in `detect_iphone_request'
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.4ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.6ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-12 12:04:08 -0700
+
+SyntaxError (/Users/jeremyjuel/Sites/Rails/smooth-planet-925/app/controllers/application_controller.rb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+....env["HTTP_USER_AGENT"] request.env["HTTP_USER_AGENT"][/(Mob...
+...                               ^):
+  app/controllers/people_controller.rb:1:in `<top (required)>'
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.8ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-12 12:04:32 -0700
+
+SyntaxError (/Users/jeremyjuel/Sites/Rails/smooth-planet-925/app/controllers/application_controller.rb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+....env["HTTP_USER_AGENT"] request.env["HTTP_USER_AGENT"][/(Mob...
+...                               ^
+/Users/jeremyjuel/Sites/Rails/smooth-planet-925/app/controllers/application_controller.rb:15: syntax error, unexpected keyword_end, expecting $end):
+  app/controllers/people_controller.rb:1:in `<top (required)>'
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.1ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-12 12:05:08 -0700
+
+SyntaxError (/Users/jeremyjuel/Sites/Rails/smooth-planet-925/app/controllers/application_controller.rb:12: syntax error, unexpected tAMPER, expecting keyword_end
+...t.env["HTTP_USER_AGENT"] &amp;&amp; request.env["HTTP_USER_A...
+...                               ^):
+  app/controllers/people_controller.rb:1:in `<top (required)>'
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.5ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-12 12:14:26 -0700
+
+SyntaxError (/Users/jeremyjuel/Sites/Rails/smooth-planet-925/app/controllers/application_controller.rb:12: syntax error, unexpected tAMPER, expecting keyword_end
+...t.env["HTTP_USER_AGENT"] &amp;&amp; request.env["HTTP_USER_A...
+...                               ^):
+  app/controllers/people_controller.rb:1:in `<top (required)>'
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.5ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-12 12:14:27 -0700
+
+SyntaxError (/Users/jeremyjuel/Sites/Rails/smooth-planet-925/app/controllers/application_controller.rb:12: syntax error, unexpected tAMPER, expecting keyword_end
+...t.env["HTTP_USER_AGENT"] &amp;&amp; request.env["HTTP_USER_A...
+...                               ^):
+  app/controllers/people_controller.rb:1:in `<top (required)>'
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.4ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-12 12:14:57 -0700
+  Processing by PeopleController#index as HTML
+  [1m[36mPerson Load (5.0ms)[0m  [1mSELECT "people".* FROM "people"[0m
+  [1m[35mMajor Load (0.2ms)[0m  SELECT "majors".* FROM "majors"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Design Studies') LIMIT 1
+  [1m[36mPerson Load (1.8ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 2 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Industrial Design') LIMIT 1
+  [1m[36mPerson Load (3.4ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 3 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Master of Fine Arts') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 4 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Visual Communication Design') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 1 )[0m
+Rendered people/_person.html.erb (16.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered layouts/_analytics.html.erb (0.4ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered people/index.html.erb within layouts/application (95.4ms)
+Completed 200 OK in 285ms (Views: 99.1ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-12 12:15:11 -0700
+  Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (4.7ms)[0m  SELECT "people".* FROM "people"
+  [1m[36mMajor Load (0.2ms)[0m  [1mSELECT "majors".* FROM "majors"[0m
+  [1m[35mMajor Load (0.2ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Design Studies') LIMIT 1
+  [1m[36mPerson Load (1.7ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 2 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Industrial Design') LIMIT 1
+  [1m[36mPerson Load (3.3ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 3 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Master of Fine Arts') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 4 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Visual Communication Design') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 1 )[0m
+Rendered people/_person.html.erb (16.6ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (31.4ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.4ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered people/index.html.erb within layouts/application (101.0ms)
+Completed 200 OK in 190ms (Views: 104.7ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-12 12:16:05 -0700
+  Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (4.4ms)[0m  SELECT "people".* FROM "people"
+  [1m[36mMajor Load (0.2ms)[0m  [1mSELECT "majors".* FROM "majors"[0m
+  [1m[35mMajor Load (0.2ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Design Studies') LIMIT 1
+  [1m[36mPerson Load (2.3ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 2 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Industrial Design') LIMIT 1
+  [1m[36mPerson Load (3.4ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 3 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Master of Fine Arts') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 4 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Visual Communication Design') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 1 )[0m
+Rendered people/_person.html.erb (16.3ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered people/index.html.erb within layouts/application (67.6ms)
+Completed 200 OK in 149ms (Views: 71.3ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-12 12:16:18 -0700
+  Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (4.3ms)[0m  SELECT "people".* FROM "people"
+  [1m[36mMajor Load (0.2ms)[0m  [1mSELECT "majors".* FROM "majors"[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Design Studies') LIMIT 1
+  [1m[36mPerson Load (1.7ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 2 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Industrial Design') LIMIT 1
+  [1m[36mPerson Load (30.8ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 3 )[0m
+  [1m[35mMajor Load (0.2ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Master of Fine Arts') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 4 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Visual Communication Design') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 1 )[0m
+Rendered people/_person.html.erb (16.8ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered people/index.html.erb within layouts/application (66.2ms)
+Completed 200 OK in 146ms (Views: 69.8ms | ActiveRecord: 37.9ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-12 12:16:51 -0700
+  Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (4.9ms)[0m  SELECT "people".* FROM "people"
+  [1m[36mMajor Load (0.2ms)[0m  [1mSELECT "majors".* FROM "majors"[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Design Studies') LIMIT 1
+  [1m[36mPerson Load (1.6ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 2 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Industrial Design') LIMIT 1
+  [1m[36mPerson Load (30.3ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 3 )[0m
+  [1m[35mMajor Load (0.2ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Master of Fine Arts') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 4 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Visual Communication Design') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 1 )[0m
+Rendered people/_person.html.erb (17.1ms)
+Rendered people/_person.html.erb (1.4ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered people/index.html.erb within layouts/application (67.6ms)
+Completed 200 OK in 148ms (Views: 71.2ms | ActiveRecord: 37.8ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-12 12:17:43 -0700
+  Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (4.6ms)[0m  SELECT "people".* FROM "people"
+  [1m[36mMajor Load (0.2ms)[0m  [1mSELECT "majors".* FROM "majors"[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Design Studies') LIMIT 1
+  [1m[36mPerson Load (1.6ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 2 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Industrial Design') LIMIT 1
+  [1m[36mPerson Load (3.2ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 3 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Master of Fine Arts') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 4 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Visual Communication Design') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 1 )[0m
+Rendered people/_person.html.erb (16.8ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/index.html.erb within layouts/application (92.9ms)
+Completed   in 172ms
+
+ActionView::Template::Error (undefined local variable or method `stylesheets' for #<#<Class:0x00000100c104e8>:0x00000100c983c0>):
+    2: <html>
+    3: 	<head>
+    4: 	  	<title><%= title %></title>
+    5: 		<%= render stylesheets %>
+    6: 		<%= javascript_include_tag :all %>
+    7: 		<%= render 'layouts/analytics' %>
+    8: 		<%= csrf_meta_tag %>
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__3973988900818222480_2155041400__912107418480284218'
+  app/controllers/people_controller.rb:14:in `index'
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.4ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.0ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-12 12:17:50 -0700
+  Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (4.4ms)[0m  SELECT "people".* FROM "people"
+  [1m[36mMajor Load (0.2ms)[0m  [1mSELECT "majors".* FROM "majors"[0m
+  [1m[35mMajor Load (0.2ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Design Studies') LIMIT 1
+  [1m[36mPerson Load (1.7ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 2 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Industrial Design') LIMIT 1
+  [1m[36mPerson Load (3.4ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 3 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Master of Fine Arts') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 4 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Visual Communication Design') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 1 )[0m
+Rendered people/_person.html.erb (16.8ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/index.html.erb within layouts/application (105.8ms)
+Completed   in 185ms
+
+ActionView::Template::Error (undefined local variable or method `stylesheets' for #<#<Class:0x00000101403150>:0x000001013e8f80>):
+    2: <html>
+    3: 	<head>
+    4: 	  	<title><%= title %></title>
+    5: 		<%= render stylesheets %>
+    6: 		<%= javascript_include_tag :all %>
+    7: 		<%= render 'layouts/analytics' %>
+    8: 		<%= csrf_meta_tag %>
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__3973988900818222480_2157870560__912107418480284218'
+  app/controllers/people_controller.rb:14:in `index'
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.7ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-12 12:18:10 -0700
+  Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (4.4ms)[0m  SELECT "people".* FROM "people"
+  [1m[36mMajor Load (0.2ms)[0m  [1mSELECT "majors".* FROM "majors"[0m
+  [1m[35mMajor Load (0.2ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Design Studies') LIMIT 1
+  [1m[36mPerson Load (1.7ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 2 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Industrial Design') LIMIT 1
+  [1m[36mPerson Load (3.7ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 3 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Master of Fine Arts') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 4 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Visual Communication Design') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 1 )[0m
+Rendered people/_person.html.erb (16.6ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered layouts/_stylesheets.html.erb (0.5ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (29.6ms)
+Rendered people/index.html.erb within layouts/application (95.7ms)
+Completed 200 OK in 176ms (Views: 99.4ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-12 12:19:04 -0700
+  Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (32.2ms)[0m  SELECT "people".* FROM "people"
+  [1m[36mMajor Load (0.2ms)[0m  [1mSELECT "majors".* FROM "majors"[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Design Studies') LIMIT 1
+  [1m[36mPerson Load (1.9ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 2 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Industrial Design') LIMIT 1
+  [1m[36mPerson Load (3.3ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 3 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Master of Fine Arts') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 4 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Visual Communication Design') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 1 )[0m
+Rendered people/_person.html.erb (16.3ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (29.6ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered layouts/_stylesheets.html.erb (0.6ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered people/index.html.erb within layouts/application (96.1ms)
+Completed 200 OK in 176ms (Views: 99.7ms | ActiveRecord: 38.3ms)

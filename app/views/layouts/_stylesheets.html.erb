@@ -1,5 +1,5 @@
-<!--#if expr="(${HTTP_USER_AGENT} = /iPhone/)"-->
-<%= stylesheet_link_tag 'iphone', :media => 'screen' %>
-<!--#else -->
-
-<%= stylesheet_link_tag 'custom', :media => 'screen' %>
+<% if @request_format == :iphone %>
+	<%= stylesheet_link_tag 'iphone', :media => 'screen' %>
+<% else %>
+	<%= stylesheet_link_tag 'custom', :media => 'screen' %>
+<% end %>
