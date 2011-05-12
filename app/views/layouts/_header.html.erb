@@ -3,10 +3,10 @@
 	<%= link_to logo, projects_path %></h1>
 	<nav id="main">
 		<ul>
-			<li><%= link_to "Work", projects_path %></li>
-			<li><%= link_to "People", people_path %></li>
-			<li><%= link_to "Show Info", show_information_path %></li>
-			<li><%= link_to "About UW Design", about_uw_design_path %></li>
+			<li><%= link_to "Work", projects_path, :id => "work" %></li>
+			<li><%= link_to "People", people_path, :id => "people" %></li>
+			<li><%= link_to "Show Info", show_information_path, :id => "show_info" %></li>
+			<li><%= link_to "About UW Design", about_uw_design_path, :id => "about_uw_design" %></li>
 		</ul>
 	</nav>
 	<nav id="subnav">

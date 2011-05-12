@@ -11,4 +11,5 @@ module ApplicationHelper
   def logo
     logo = image_tag("general/logo.png", :alt => "UW Design Show 2011", :class => "logo")
   end
+  
 end

@@ -5,14 +5,11 @@ class PagesController < ApplicationController
   
   def about_uw_design
     @title = "About UW Design"
+    @active_nav = "about_uw_design"
   end
   
   def show_information
     @title = "Show Information"
-  end
-  
-  def catlist
-    @title = "Categories Cats"
-    @navs = Category.all.sort! { |a,b| a.name.downcase <=> b.name.downcase }
+    @active_nav = "show_info"
   end
 end

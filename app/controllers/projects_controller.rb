@@ -5,6 +5,8 @@ class ProjectsController < ApplicationController
     @navs = Category.all.sort! { |a,b| a.name.downcase <=> b.name.downcase }
     @sub_image = "BestWorkPhrase"
   	
+  	@active_nav = "work"
+  	
   	# every 10 projects, insert one circle from the circle table
   	
   	#@insert = Category.all

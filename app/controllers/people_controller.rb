@@ -9,6 +9,8 @@ class PeopleController < ApplicationController
     @mfa = Major.find_by_name('Master of Fine Arts').people.sort! { |a,b| a.lname.downcase <=> b.lname.downcase }
     @vcd = Major.find_by_name('Visual Communication Design').people.sort! { |a,b| a.lname.downcase <=> b.lname.downcase }
     
+    @active_nav = "people"
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @people }
@@ -19,8 +21,8 @@ class PeopleController < ApplicationController
     
     @person = Person.find(params[:id])
     @title = @person.fname + " " + @person.lname
-    #@navs = @person.projects.all.sort! { |a,b| a.name.downcase <=> b.name.downcase }
     
+    @active_nav = "people"
     
     respond_to do |format|
       format.html # index.html.erb

@@ -1,7 +1,9 @@
 	<div class="work">
-		<%= link_to image_tag("content/projects/thumbnails/#{project.image_url}", :alt => project.name ), project %>
-		<!-- <h4 class="work_title">
-			<%= link_to project.name, project %>
-		</h4> -->
+		<% project.people.each do |person| %>
+			<% @pageuri = person.id %>
+		<% end %>
+		
+		<%= link_to image_tag("content/projects/thumbnails/#{project.thumb_url}", :alt => project.name ), person_path(@pageuri, :anchor => project.name.downcase.gsub(/ /,'_')) %>
+		
 	</div>
 

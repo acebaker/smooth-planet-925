@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110512044031) do
+ActiveRecord::Schema.define(:version => 20110512061119) do
 
 # Could not dump table "categories" because of following StandardError
 #   Unknown type '' for column 'nav_name'
@@ -24,9 +24,18 @@ ActiveRecord::Schema.define(:version => 20110512044031) do
     t.string "circle_content"
   end
 
+  create_table "images", :force => true do |t|
+    t.string "image_url"
+  end
+
   create_table "images_people", :id => false, :force => true do |t|
     t.integer "profile_image_id"
     t.integer "person_id"
+  end
+
+  create_table "images_projects", :id => false, :force => true do |t|
+    t.integer "image_id"
+    t.integer "project_id"
   end
 
 # Could not dump table "majors" because of following StandardError
@@ -54,19 +63,10 @@ ActiveRecord::Schema.define(:version => 20110512044031) do
     t.string "thumb_url"
   end
 
-  create_table "project_images", :force => true do |t|
-    t.string "image_url"
-  end
-
   create_table "projects", :force => true do |t|
     t.string   "name"
     t.string   "image_url"
     t.datetime "nav_name"
-  end
-
-  create_table "projects_project_images", :id => false, :force => true do |t|
-    t.integer "project_id"
-    t.integer "project_image_id"
   end
 
 end

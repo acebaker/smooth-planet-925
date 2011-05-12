@@ -6,11 +6,22 @@
 		<%= javascript_include_tag :all %>
 		<%= render 'layouts/analytics' %>
 		<%= csrf_meta_tag %>
+		
+		<style type="text/css">
+			nav#main ul li a#<%= @active_nav %> {
+				border-top: solid 5px;
+				padding-top: 5px;
+				border-color: black;
+				font-weight:bold;
+			}
+		</style>
+		
 	</head>
 	<body>
 		<%= render 'layouts/header' %>
 		<div id="content">
 			<%= yield %>
+			<a href='#all' id="bottom"class="scroll">Back to Top</a>
 		</div> <!-- end content -->
 	</body>
 </html>

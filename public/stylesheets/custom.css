@@ -75,17 +75,20 @@ nav#main {
 	min-width:1000px;
 }
 
-nav#main ul li {
+nav#main ul li, nav#main ul li a {
 	float: left;
 	width: 150px;
-	border-top: solid 1px black;
-	padding-top: 10px;
-	margin-top: 39px;
 	margin-right: 12px;
 	list-style-type: none;
 }
 
-nav#main ul li:hover, nav#main ul li:active {
+nav#main ul li a {
+	border-top: solid 1px black;
+	padding-top: 10px;
+	margin-top: 39px;
+}
+
+nav#main ul li a:hover {
 	border-top: solid 5px;
 	padding-top: 5px;
 	border-color: black;
@@ -98,7 +101,7 @@ header nav#subnav {
 	left: 36px;
 }
 
-nav#subnav .subnav-phrase {
+nav#subnav .subnav-phrase, nav#subnav img {
 	margin-bottom: 30px;	
 }
 
@@ -210,4 +213,12 @@ h2.focalpoint {
 	line-height: 160px;
 	font-family: "TitlingGothicMedium", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	border-bottom: 1px solid #fff700;
+}
+
+#bottom {
+	float:left;
+	clear:both;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	height: 50px;
 }
