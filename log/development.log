@@ -39435,3 +39435,127 @@ ActionView::Template::Error (uninitialized constant Project::Projectimage):
 Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
 Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
 Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.8ms)
+
+
+Started GET "/projects/9" for 127.0.0.1 at 2011-05-11 22:27:24 -0700
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1[0m
+Rendered projects/show.html.erb within layouts/application (15.4ms)
+Completed   in 67ms
+
+ActionView::Template::Error (uninitialized constant Project::Projectimage):
+    4: </div>
+    5: 
+    6: <div id="images">
+    7: 	<% @project.projectimages.each do |image| %>
+    8: 		<%= image_tag("content/projects/large/#{image.image_url}", :alt => image.image_url )%>
+    9: 	<% end %>
+    10: </div>
+  app/views/projects/show.html.erb:7:in `_app_views_projects_show_html_erb___1983499563309364030_2170846100__1026619798486385846'
+  app/controllers/projects_controller.rb:22:in `show'
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.3ms)
+
+
+Started GET "/projects/9" for 127.0.0.1 at 2011-05-11 22:27:42 -0700
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 9) LIMIT 1
+Rendered projects/show.html.erb within layouts/application (15.4ms)
+Completed   in 65ms
+
+ActionView::Template::Error (uninitialized constant Project::Projectimage):
+    4: </div>
+    5: 
+    6: <div id="images">
+    7: 	<% @project.projectimages.each do |image| %>
+    8: 		<%= image_tag("content/projects/large/#{image.image_url}", :alt => image.image_url )%>
+    9: 	<% end %>
+    10: </div>
+  app/views/projects/show.html.erb:7:in `_app_views_projects_show_html_erb___1983499563309364030_2171094120__1026619798486385846'
+  app/controllers/projects_controller.rb:22:in `show'
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.1ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-11 22:30:37 -0700
+  Processing by PeopleController#index as HTML
+  [1m[36mPerson Load (36.2ms)[0m  [1mSELECT "people".* FROM "people"[0m
+  [1m[35mMajor Load (0.2ms)[0m  SELECT "majors".* FROM "majors"
+  [1m[36mMajor Load (0.1ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Design Studies') LIMIT 1[0m
+  [1m[35mPerson Load (1.6ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 2 )
+  [1m[36mMajor Load (0.1ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Industrial Design') LIMIT 1[0m
+  [1m[35mPerson Load (3.2ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 3 )
+  [1m[36mMajor Load (0.1ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Master of Fine Arts') LIMIT 1[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 4 )
+  [1m[36mMajor Load (0.1ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Visual Communication Design') LIMIT 1[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 1 )
+Rendered people/_person.html.erb (16.3ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.5ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered people/index.html.erb within layouts/application (99.6ms)
+Completed 200 OK in 182ms (Views: 103.3ms | ActiveRecord: 41.9ms)
+
+
+Started GET "/people/6" for 127.0.0.1 at 2011-05-11 22:30:39 -0700
+  Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT "people".* FROM "people" WHERE ("people"."id" = 6) LIMIT 1[0m
+  [1m[35mProject Load (0.3ms)[0m  SELECT * FROM "projects" INNER JOIN "people_projects" ON "projects".id = "people_projects".project_id WHERE ("people_projects".person_id = 6 )
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered people/show.html.erb within layouts/application (61.9ms)
+Completed 200 OK in 84ms (Views: 65.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images/content/projects/large/Migas_01.jpg" for 127.0.0.1 at 2011-05-11 22:30:40 -0700
+
+ActionController::RoutingError (No route matches "/images/content/projects/large/Migas_01.jpg"):
+  
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/people/6" for 127.0.0.1 at 2011-05-11 22:39:37 -0700
+  Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT "people".* FROM "people" WHERE ("people"."id" = 6) LIMIT 1[0m
+  [1m[35mProject Load (0.3ms)[0m  SELECT * FROM "projects" INNER JOIN "people_projects" ON "projects".id = "people_projects".project_id WHERE ("people_projects".person_id = 6 )
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered people/show.html.erb within layouts/application (61.3ms)
+Completed 200 OK in 83ms (Views: 64.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images/content/projects/large/Migas_01.jpg" for 127.0.0.1 at 2011-05-11 22:39:37 -0700
+
+ActionController::RoutingError (No route matches "/images/content/projects/large/Migas_01.jpg"):
+  
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)

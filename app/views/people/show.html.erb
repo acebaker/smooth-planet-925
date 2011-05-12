@@ -2,7 +2,7 @@
 
 	<h2 id="person_name"><%= @person.fname %> <br /><%= @person.lname %></h2>
 	<div id="person_image">
-		<%= image_tag("content/people/thumbnails/Thumb_#{@person.lname}.jpg", :alt => @person.lname, :width => "150px" )%>
+		<%= image_tag("content/people/profiles/Profile_#{@person.lname}.jpg", :alt => @person.lname, :width => "150px" )%>
 	</div>
 	
 
@@ -14,8 +14,6 @@
 <% @person.projects.each do |project| %>
 	<h2><%= project.name %></h2>
 	<div id="images">
-		<% project.projectimages.each do |image| %>
-			<%= image_tag("content/projects/large/#{image.image_url}", :alt => image.image_url )%>
-		<% end %>
+			<%= image_tag("content/projects/large/#{project.image_url}", :alt => project.image_url )%>
 	</div>
 <% end %>
