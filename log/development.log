@@ -34507,3 +34507,234 @@ Rendered layouts/_analytics.html.erb (0.4ms)
 Rendered layouts/_header.html.erb (2.0ms)
 Rendered projects/index.html.erb within layouts/application (606.8ms)
 Completed 200 OK in 640ms (Views: 609.8ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-05-11 17:56:23 -0700
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (2.0ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mCategory Load (2.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Rendered projects/_project.html.erb (12.5ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.7ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (40.4ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.7ms)
+Rendered projects/_project.html.erb (7.3ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (7.2ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (47.5ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (1.4ms)
+Rendered projects/_project.html.erb (1.2ms)
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "circles"
+  [1m[36mCircle Load (0.3ms)[0m  [1mSELECT "circles".* FROM "circles" LIMIT 1 OFFSET 2[0m
+Rendered projects/_project.html.erb (1.5ms)
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (1.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "circles"
+  [1m[36mCircle Load (0.3ms)[0m  [1mSELECT "circles".* FROM "circles" LIMIT 1 OFFSET 4[0m
+Rendered projects/_project.html.erb (1.3ms)
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.2ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered projects/index.html.erb within layouts/application (507.4ms)
+Completed 200 OK in 570ms (Views: 510.4ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-11 17:56:33 -0700
+  Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (2.4ms)[0m  SELECT "people".* FROM "people"
+  [1m[36mMajor Load (0.2ms)[0m  [1mSELECT "majors".* FROM "majors"[0m
+  [1m[35mMajor Load (0.2ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Design Studies') LIMIT 1
+  [1m[36mPerson Load (32.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 2 )[0m
+  [1m[35mMajor Load (0.2ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Industrial Design') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 3 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Master of Fine Arts') LIMIT 1
+  [1m[36mPerson Load (0.4ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 4 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Visual Communication Design') LIMIT 1
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 1 )[0m
+Rendered people/_person.html.erb (11.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered people/index.html.erb within layouts/application (47.8ms)
+Completed 200 OK in 134ms (Views: 52.1ms | ActiveRecord: 36.1ms)
+
+
+Started GET "/images/content/people/thumbnails/Thumb_Benson.jpg" for 127.0.0.1 at 2011-05-11 17:56:33 -0700
+
+ActionController::RoutingError (No route matches "/images/content/people/thumbnails/Thumb_Benson.jpg"):
+  
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/images/content/people/thumbnails/Thumb_Chu.jpg" for 127.0.0.1 at 2011-05-11 17:56:33 -0700
+
+ActionController::RoutingError (No route matches "/images/content/people/thumbnails/Thumb_Chu.jpg"):
+  
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/images/content/people/thumbnails/Thumb_Juel.jpg" for 127.0.0.1 at 2011-05-11 17:56:33 -0700
+
+ActionController::RoutingError (No route matches "/images/content/people/thumbnails/Thumb_Juel.jpg"):
+  
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/images/content/people/thumbnails/Thumb_Migas.jpg" for 127.0.0.1 at 2011-05-11 17:56:33 -0700
+
+ActionController::RoutingError (No route matches "/images/content/people/thumbnails/Thumb_Migas.jpg"):
+  
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/images/content/people/thumbnails/Thumb_Milton.jpg" for 127.0.0.1 at 2011-05-11 17:56:33 -0700
+
+ActionController::RoutingError (No route matches "/images/content/people/thumbnails/Thumb_Milton.jpg"):
+  
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/images/content/people/thumbnails/Thumb_Schuetz.jpg" for 127.0.0.1 at 2011-05-11 17:56:33 -0700
+
+ActionController::RoutingError (No route matches "/images/content/people/thumbnails/Thumb_Schuetz.jpg"):
+  
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/images/content/people/thumbnails/Thumb_Sheridan.jpg" for 127.0.0.1 at 2011-05-11 17:56:33 -0700
+
+ActionController::RoutingError (No route matches "/images/content/people/thumbnails/Thumb_Sheridan.jpg"):
+  
+
+Rendered /Users/jeremyjuel/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-05-11 17:56:52 -0700
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (2.0ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mCategory Load (2.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Rendered projects/_project.html.erb (13.0ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.7ms)
+Rendered projects/_project.html.erb (6.7ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (42.0ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.7ms)
+Rendered projects/_project.html.erb (6.6ms)
+Rendered projects/_project.html.erb (6.7ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.7ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.7ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.7ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.7ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.3ms)
+Rendered projects/_project.html.erb (47.4ms)
+Rendered projects/_project.html.erb (7.3ms)
+Rendered projects/_project.html.erb (1.3ms)
+Rendered projects/_project.html.erb (1.2ms)
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "circles"
+  [1m[36mCircle Load (0.3ms)[0m  [1mSELECT "circles".* FROM "circles" LIMIT 1 OFFSET 7[0m
+Rendered projects/_project.html.erb (1.6ms)
+Rendered projects/_project.html.erb (1.3ms)
+Rendered projects/_project.html.erb (1.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "circles"
+  [1m[36mCircle Load (0.4ms)[0m  [1mSELECT "circles".* FROM "circles" LIMIT 1 OFFSET 0[0m
+Rendered projects/_project.html.erb (1.4ms)
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (1.2ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.0ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered projects/_project.html.erb (8.5ms)
+Rendered projects/_project.html.erb (6.9ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (7.1ms)
+Rendered projects/_project.html.erb (7.5ms)
+Rendered projects/_project.html.erb (7.5ms)
+Rendered projects/_project.html.erb (7.8ms)
+Rendered layouts/_analytics.html.erb (0.4ms)
+Rendered layouts/_header.html.erb (2.1ms)
+Rendered projects/index.html.erb within layouts/application (514.5ms)
+Completed 200 OK in 582ms (Views: 517.5ms | ActiveRecord: 5.3ms)
