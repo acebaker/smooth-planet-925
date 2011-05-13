@@ -56233,3 +56233,742 @@ Rendered layouts/_analytics.html.erb (0.3ms)
 Rendered layouts/_header.html.erb (2.0ms)
 Rendered projects/index.html.erb within layouts/application (405.6ms)
 Completed 200 OK in 441ms (Views: 406.7ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/people/6" for 127.0.0.1 at 2011-05-13 08:39:03 -0700
+  Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT "people".* FROM "people" WHERE ("people"."id" = 6) LIMIT 1[0m
+  [1m[35mProject Load (0.7ms)[0m  SELECT * FROM "projects" INNER JOIN "people_projects" ON "projects".id = "people_projects".project_id WHERE ("people_projects".person_id = 6 )
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 4 )[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 4 )
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 2 )[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 2 )
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 5 )[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 5 )
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 9 )[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 9 )
+Rendered layouts/_stylesheets.html.erb (0.5ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered people/show.html.erb within layouts/application (132.5ms)
+Completed 200 OK in 156ms (Views: 132.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-13 08:39:16 -0700
+  Processing by PeopleController#index as HTML
+  [1m[36mPerson Load (4.8ms)[0m  [1mSELECT "people".* FROM "people"[0m
+  [1m[35mMajor Load (0.2ms)[0m  SELECT "majors".* FROM "majors"
+  [1m[36mMajor Load (0.2ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Design Studies') LIMIT 1[0m
+  [1m[35mPerson Load (1.7ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 2 )
+  [1m[36mMajor Load (0.1ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Industrial Design') LIMIT 1[0m
+  [1m[35mPerson Load (3.8ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 3 )
+  [1m[36mMajor Load (0.1ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Master of Fine Arts') LIMIT 1[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 4 )
+  [1m[36mMajor Load (0.1ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Visual Communication Design') LIMIT 1[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 1 )
+Rendered people/_person.html.erb (16.6ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered layouts/_stylesheets.html.erb (0.5ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (2.1ms)
+Rendered people/index.html.erb within layouts/application (69.0ms)
+Completed 200 OK in 149ms (Views: 72.7ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/people/21" for 127.0.0.1 at 2011-05-13 08:39:54 -0700
+  Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mPerson Load (0.4ms)[0m  [1mSELECT "people".* FROM "people" WHERE ("people"."id" = 21) LIMIT 1[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT * FROM "projects" INNER JOIN "people_projects" ON "projects".id = "people_projects".project_id WHERE ("people_projects".person_id = 21 )
+Rendered layouts/_stylesheets.html.erb (0.5ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered people/show.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 50ms (Views: 31.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-13 08:39:57 -0700
+  Processing by PeopleController#index as HTML
+  [1m[36mPerson Load (4.4ms)[0m  [1mSELECT "people".* FROM "people"[0m
+  [1m[35mMajor Load (0.2ms)[0m  SELECT "majors".* FROM "majors"
+  [1m[36mMajor Load (0.2ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Design Studies') LIMIT 1[0m
+  [1m[35mPerson Load (1.7ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 2 )
+  [1m[36mMajor Load (0.1ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Industrial Design') LIMIT 1[0m
+  [1m[35mPerson Load (29.2ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 3 )
+  [1m[36mMajor Load (0.2ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Master of Fine Arts') LIMIT 1[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 4 )
+  [1m[36mMajor Load (0.1ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Visual Communication Design') LIMIT 1[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 1 )
+Rendered people/_person.html.erb (16.4ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered layouts/_stylesheets.html.erb (0.4ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered people/index.html.erb within layouts/application (66.9ms)
+Completed 200 OK in 146ms (Views: 70.5ms | ActiveRecord: 36.4ms)
+
+
+Started GET "/people/7" for 127.0.0.1 at 2011-05-13 08:40:00 -0700
+  Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT "people".* FROM "people" WHERE ("people"."id" = 7) LIMIT 1[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT * FROM "projects" INNER JOIN "people_projects" ON "projects".id = "people_projects".project_id WHERE ("people_projects".person_id = 7 )
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 1 )[0m
+  [1m[35mCategory Load (0.9ms)[0m  SELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 1 )
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 3 )[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 3 )
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 6 )[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 6 )
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 7 )[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 7 )
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 8 )[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 8 )
+Rendered layouts/_stylesheets.html.erb (0.5ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered people/show.html.erb within layouts/application (103.1ms)
+Completed 200 OK in 125ms (Views: 102.4ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/people/7" for 127.0.0.1 at 2011-05-13 08:45:11 -0700
+  Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT "people".* FROM "people" WHERE ("people"."id" = 7) LIMIT 1[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT * FROM "projects" INNER JOIN "people_projects" ON "projects".id = "people_projects".project_id WHERE ("people_projects".person_id = 7 )
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 1 )[0m
+  [1m[35mCategory Load (0.9ms)[0m  SELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 1 )
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 3 )[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 3 )
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 6 )[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 6 )
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 7 )[0m
+  [1m[35mCategory Load (1.0ms)[0m  SELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 7 )
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 8 )[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 8 )
+Rendered layouts/_stylesheets.html.erb (0.5ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered people/show.html.erb within layouts/application (105.1ms)
+Completed 200 OK in 154ms (Views: 103.8ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-05-13 08:45:12 -0700
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (1.2ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  [1m[35mCategory Load (2.3ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 1 )[0m
+  [1m[35mPerson Load (0.2ms)[0m  SELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 2 )
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 3 )[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 4 )
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 5 )[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 6 )
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 7 )[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 8 )
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 9 )[0m
+Rendered projects/_project.html.erb (64.4ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (29.8ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.7ms)
+Rendered projects/_project.html.erb (3.7ms)
+Rendered projects/_project.html.erb (31.3ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (0.8ms)
+Rendered projects/_project.html.erb (0.7ms)
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "circles"
+  [1m[36mCircle Load (0.3ms)[0m  [1mSELECT "circles".* FROM "circles" LIMIT 1 OFFSET 8[0m
+Rendered projects/_project.html.erb (1.0ms)
+Rendered projects/_project.html.erb (0.8ms)
+Rendered projects/_project.html.erb (0.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "circles"
+  [1m[36mCircle Load (0.4ms)[0m  [1mSELECT "circles".* FROM "circles" LIMIT 1 OFFSET 6[0m
+Rendered projects/_project.html.erb (0.9ms)
+Rendered projects/_project.html.erb (0.7ms)
+Rendered projects/_project.html.erb (0.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "circles"
+  [1m[36mCircle Load (0.3ms)[0m  [1mSELECT "circles".* FROM "circles" LIMIT 1 OFFSET 5[0m
+Rendered projects/_project.html.erb (0.8ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (30.9ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered layouts/_stylesheets.html.erb (0.4ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered projects/index.html.erb within layouts/application (390.4ms)
+Completed 200 OK in 454ms (Views: 391.5ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/people/6" for 127.0.0.1 at 2011-05-13 08:45:16 -0700
+  Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mPerson Load (0.2ms)[0m  SELECT "people".* FROM "people" WHERE ("people"."id" = 6) LIMIT 1
+  [1m[36mProject Load (0.9ms)[0m  [1mSELECT * FROM "projects" INNER JOIN "people_projects" ON "projects".id = "people_projects".project_id WHERE ("people_projects".person_id = 6 )[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 4 )
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 4 )[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 2 )
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 2 )[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 5 )
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 5 )[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 9 )
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 9 )[0m
+Rendered layouts/_stylesheets.html.erb (0.4ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered people/show.html.erb within layouts/application (107.2ms)
+Completed 200 OK in 129ms (Views: 107.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-05-13 08:47:45 -0700
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (1.2ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mCategory Load (2.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mPerson Load (0.2ms)[0m  SELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 1 )
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 2 )[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 3 )
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 4 )[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 5 )
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 6 )[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 7 )
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 8 )[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 9 )
+Rendered projects/_project.html.erb (64.2ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (31.9ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (30.8ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.6ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (0.8ms)
+Rendered projects/_project.html.erb (0.8ms)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "circles"[0m
+  [1m[35mCircle Load (0.3ms)[0m  SELECT "circles".* FROM "circles" LIMIT 1 OFFSET 5
+Rendered projects/_project.html.erb (1.0ms)
+Rendered projects/_project.html.erb (0.8ms)
+Rendered projects/_project.html.erb (0.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "circles"[0m
+  [1m[35mCircle Load (0.3ms)[0m  SELECT "circles".* FROM "circles" LIMIT 1 OFFSET 1
+Rendered projects/_project.html.erb (0.8ms)
+Rendered projects/_project.html.erb (0.8ms)
+Rendered projects/_project.html.erb (0.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "circles"[0m
+  [1m[35mCircle Load (0.3ms)[0m  SELECT "circles".* FROM "circles" LIMIT 1 OFFSET 0
+Rendered projects/_project.html.erb (0.8ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (33.1ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered layouts/_stylesheets.html.erb (0.6ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (2.3ms)
+Rendered projects/index.html.erb within layouts/application (391.6ms)
+Completed 200 OK in 430ms (Views: 392.7ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-13 08:50:09 -0700
+  Processing by PeopleController#index as HTML
+  [1m[36mPerson Load (4.7ms)[0m  [1mSELECT "people".* FROM "people"[0m
+  [1m[35mMajor Load (0.2ms)[0m  SELECT "majors".* FROM "majors"
+  [1m[36mMajor Load (0.1ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Design Studies') LIMIT 1[0m
+  [1m[35mPerson Load (1.9ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 2 )
+  [1m[36mMajor Load (0.1ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Industrial Design') LIMIT 1[0m
+  [1m[35mPerson Load (3.3ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 3 )
+  [1m[36mMajor Load (0.1ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Master of Fine Arts') LIMIT 1[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 4 )
+  [1m[36mMajor Load (0.1ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Visual Communication Design') LIMIT 1[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 1 )
+Rendered people/_person.html.erb (16.5ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (28.9ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered layouts/_stylesheets.html.erb (0.4ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered people/index.html.erb within layouts/application (95.5ms)
+Completed 200 OK in 176ms (Views: 99.2ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/people/17" for 127.0.0.1 at 2011-05-13 08:58:34 -0700
+  Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mPerson Load (0.4ms)[0m  [1mSELECT "people".* FROM "people" WHERE ("people"."id" = 17) LIMIT 1[0m
+  [1m[35mProject Load (1.1ms)[0m  SELECT * FROM "projects" INNER JOIN "people_projects" ON "projects".id = "people_projects".project_id WHERE ("people_projects".person_id = 17 )
+Rendered layouts/_stylesheets.html.erb (0.5ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered people/show.html.erb within layouts/application (58.3ms)
+Completed 200 OK in 81ms (Views: 60.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-13 08:58:36 -0700
+  Processing by PeopleController#index as HTML
+  [1m[36mPerson Load (4.5ms)[0m  [1mSELECT "people".* FROM "people"[0m
+  [1m[35mMajor Load (0.2ms)[0m  SELECT "majors".* FROM "majors"
+  [1m[36mMajor Load (0.1ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Design Studies') LIMIT 1[0m
+  [1m[35mPerson Load (29.1ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 2 )
+  [1m[36mMajor Load (0.2ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Industrial Design') LIMIT 1[0m
+  [1m[35mPerson Load (3.4ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 3 )
+  [1m[36mMajor Load (0.1ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Master of Fine Arts') LIMIT 1[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 4 )
+  [1m[36mMajor Load (0.1ms)[0m  [1mSELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Visual Communication Design') LIMIT 1[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 1 )
+Rendered people/_person.html.erb (16.4ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered layouts/_stylesheets.html.erb (0.4ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered people/index.html.erb within layouts/application (67.4ms)
+Completed 200 OK in 147ms (Views: 71.0ms | ActiveRecord: 38.0ms)
+
+
+Started GET "/people/7" for 127.0.0.1 at 2011-05-13 08:58:37 -0700
+  Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT "people".* FROM "people" WHERE ("people"."id" = 7) LIMIT 1[0m
+  [1m[35mProject Load (1.1ms)[0m  SELECT * FROM "projects" INNER JOIN "people_projects" ON "projects".id = "people_projects".project_id WHERE ("people_projects".person_id = 7 )
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 1 )[0m
+  [1m[35mCategory Load (0.9ms)[0m  SELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 1 )
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 3 )[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 3 )
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 6 )[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 6 )
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 7 )[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 7 )
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT * FROM "images" INNER JOIN "images_projects" ON "images".id = "images_projects".image_id WHERE ("images_projects".project_id = 8 )[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT * FROM "categories" INNER JOIN "categories_projects" ON "categories".id = "categories_projects".category_id WHERE ("categories_projects".project_id = 8 )
+Rendered layouts/_stylesheets.html.erb (0.5ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered people/show.html.erb within layouts/application (104.9ms)
+Completed 200 OK in 127ms (Views: 104.0ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-05-13 09:03:06 -0700
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (1.3ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  [1m[35mCategory Load (2.3ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mPerson Load (0.3ms)[0m  [1mSELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 1 )[0m
+  [1m[35mPerson Load (0.2ms)[0m  SELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 2 )
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 3 )[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 4 )
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 5 )[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 6 )
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 7 )[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 8 )
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 9 )[0m
+Rendered projects/_project.html.erb (63.9ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (31.0ms)
+Rendered projects/_project.html.erb (3.6ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (4.0ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.7ms)
+Rendered projects/_project.html.erb (3.8ms)
+Rendered projects/_project.html.erb (4.6ms)
+Rendered projects/_project.html.erb (3.8ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (32.7ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (0.8ms)
+Rendered projects/_project.html.erb (0.8ms)
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "circles"
+  [1m[36mCircle Load (0.3ms)[0m  [1mSELECT "circles".* FROM "circles" LIMIT 1 OFFSET 7[0m
+Rendered projects/_project.html.erb (1.0ms)
+Rendered projects/_project.html.erb (0.8ms)
+Rendered projects/_project.html.erb (0.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "circles"
+  [1m[36mCircle Load (0.3ms)[0m  [1mSELECT "circles".* FROM "circles" LIMIT 1 OFFSET 8[0m
+Rendered projects/_project.html.erb (0.8ms)
+Rendered projects/_project.html.erb (0.8ms)
+Rendered projects/_project.html.erb (0.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "circles"
+  [1m[36mCircle Load (0.3ms)[0m  [1mSELECT "circles".* FROM "circles" LIMIT 1 OFFSET 2[0m
+Rendered projects/_project.html.erb (0.9ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (6.4ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered layouts/_stylesheets.html.erb (0.4ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered projects/index.html.erb within layouts/application (402.1ms)
+Completed 200 OK in 465ms (Views: 403.2ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-13 09:03:07 -0700
+  Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (4.6ms)[0m  SELECT "people".* FROM "people"
+  [1m[36mMajor Load (0.2ms)[0m  [1mSELECT "majors".* FROM "majors"[0m
+  [1m[35mMajor Load (0.2ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Design Studies') LIMIT 1
+  [1m[36mPerson Load (1.6ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 2 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Industrial Design') LIMIT 1
+  [1m[36mPerson Load (3.4ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 3 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Master of Fine Arts') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 4 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Visual Communication Design') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 1 )[0m
+Rendered people/_person.html.erb (16.5ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.5ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered layouts/_stylesheets.html.erb (0.4ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (29.2ms)
+Rendered people/index.html.erb within layouts/application (95.4ms)
+Completed 200 OK in 175ms (Views: 99.1ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/show_information" for 127.0.0.1 at 2011-05-13 09:03:08 -0700
+  Processing by PagesController#show_information as HTML
+Rendered layouts/_stylesheets.html.erb (0.5ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (3.3ms)
+Rendered pages/show_information.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 12ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about_uw_design" for 127.0.0.1 at 2011-05-13 09:03:09 -0700
+  Processing by PagesController#about_uw_design as HTML
+Rendered layouts/_stylesheets.html.erb (0.5ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered pages/about_uw_design.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show_information" for 127.0.0.1 at 2011-05-13 09:03:09 -0700
+  Processing by PagesController#show_information as HTML
+Rendered layouts/_stylesheets.html.erb (0.5ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered pages/show_information.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 10ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2011-05-13 09:03:10 -0700
+  Processing by PeopleController#index as HTML
+  [1m[35mPerson Load (4.6ms)[0m  SELECT "people".* FROM "people"
+  [1m[36mMajor Load (0.2ms)[0m  [1mSELECT "majors".* FROM "majors"[0m
+  [1m[35mMajor Load (0.2ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Design Studies') LIMIT 1
+  [1m[36mPerson Load (1.7ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 2 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Industrial Design') LIMIT 1
+  [1m[36mPerson Load (30.6ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 3 )[0m
+  [1m[35mMajor Load (0.2ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Master of Fine Arts') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 4 )[0m
+  [1m[35mMajor Load (0.1ms)[0m  SELECT "majors".* FROM "majors" WHERE ("majors"."name" = 'Visual Communication Design') LIMIT 1
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "majors_people" ON "people".id = "majors_people".person_id WHERE ("majors_people".major_id = 1 )[0m
+Rendered people/_person.html.erb (17.4ms)
+Rendered people/_person.html.erb (1.4ms)
+Rendered people/_person.html.erb (1.4ms)
+Rendered people/_person.html.erb (1.4ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.3ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.4ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.1ms)
+Rendered people/_person.html.erb (1.2ms)
+Rendered layouts/_stylesheets.html.erb (0.5ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered people/index.html.erb within layouts/application (73.1ms)
+Completed 200 OK in 154ms (Views: 76.8ms | ActiveRecord: 37.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-05-13 09:03:11 -0700
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (1.2ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mCategory Load (2.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mPerson Load (0.2ms)[0m  SELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 1 )
+  [1m[36mPerson Load (0.2ms)[0m  [1mSELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 2 )[0m
+  [1m[35mPerson Load (0.2ms)[0m  SELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 3 )
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 4 )[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 5 )
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 6 )[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 7 )
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 8 )[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT * FROM "people" INNER JOIN "people_projects" ON "people".id = "people_projects".person_id WHERE ("people_projects".project_id = 9 )
+Rendered projects/_project.html.erb (72.0ms)
+Rendered projects/_project.html.erb (3.6ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (31.2ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (32.8ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (3.6ms)
+Rendered projects/_project.html.erb (4.4ms)
+Rendered projects/_project.html.erb (3.9ms)
+Rendered projects/_project.html.erb (3.6ms)
+Rendered projects/_project.html.erb (0.9ms)
+Rendered projects/_project.html.erb (0.8ms)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "circles"[0m
+  [1m[35mCircle Load (0.3ms)[0m  SELECT "circles".* FROM "circles" LIMIT 1 OFFSET 7
+Rendered projects/_project.html.erb (1.0ms)
+Rendered projects/_project.html.erb (0.8ms)
+Rendered projects/_project.html.erb (1.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "circles"[0m
+  [1m[35mCircle Load (0.4ms)[0m  SELECT "circles".* FROM "circles" LIMIT 1 OFFSET 5
+Rendered projects/_project.html.erb (0.9ms)
+Rendered projects/_project.html.erb (0.7ms)
+Rendered projects/_project.html.erb (0.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "circles"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "circles".* FROM "circles" LIMIT 1 OFFSET 7
+Rendered projects/_project.html.erb (0.8ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.5ms)
+Rendered projects/_project.html.erb (29.9ms)
+Rendered projects/_project.html.erb (3.6ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.2ms)
+Rendered projects/_project.html.erb (3.3ms)
+Rendered projects/_project.html.erb (3.4ms)
+Rendered layouts/_stylesheets.html.erb (0.4ms)
+Rendered layouts/_analytics.html.erb (0.3ms)
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered projects/index.html.erb within layouts/application (404.7ms)
+Completed 200 OK in 441ms (Views: 406.1ms | ActiveRecord: 5.8ms)
