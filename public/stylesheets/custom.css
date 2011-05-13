@@ -80,7 +80,7 @@ nav#main {
 	position: fixed;
 	left: 280px;
 	top:24px;
-	padding-left: 80px;
+	padding-left: 55px;
 	background-image: url("../images/general/headerbg.png");
 	background-repeat: repeat-x;
 	height: 101px;
@@ -92,7 +92,7 @@ nav#main {
 
 nav#main ul li, nav#main ul li a {
 	float: left;
-	width: 150px;
+	width: 130px;
 	margin-right: 12px;
 	list-style-type: none;
 }
@@ -125,8 +125,21 @@ header nav#subnav ul li {
 }
 
 header nav#subnav ul li a {
-	color: #333333;
+	color: rgb(150,150,150);
 }
+
+header nav#subnav ul li a:hover {
+	color: black;
+	font-weight:normal;
+	list-style-position: outside;
+	list-style-image: url(cat.jpg);
+}
+
+header nav#subnav ul li:hover {
+	list-style-position: outside;
+	list-style-image: url(../images/general/xpmenu_arrow.gif);
+}
+
 
 #content {
 	height: 100%;
