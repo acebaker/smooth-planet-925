@@ -9,6 +9,14 @@
 
 <p id="person_about"><%= @person.about %></p>
 
+<div id="all">
+	<% @person.projects.each do |project| %>
+	<div class="work">
+		<%= link_to image_tag("content/projects/thumbnails/#{project.thumb_url}", :alt => project.name ), person_path(@person, :anchor => project.name.downcase.gsub(/ /,'_')), :class => "scroll" %>
+	</div>
+	<% end %>
+</div>
+
 <% @person.projects.each do |project| %>
 	<div id="<%= project.name.downcase.gsub(/ /,'_') %>" class="project"><h2><%= project.name %></h2>
 		<p class="description"><%= project.description %></p>
