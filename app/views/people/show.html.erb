@@ -26,7 +26,10 @@
 			<% end %>
 		</div>
 		<h4 class="social">
-			<a href="http://www.facebook.com/sharer.php?u=http://uwdesign2011.com<%= person_path(@person, :anchor => project.name.downcase.gsub(/ /,'_')) %>&t=<%= project.name %>" ><img title="FaceBook : <%= project.name %> : http://uwdesign2011.com<%= person_path(@person, :anchor => project.name.downcase.gsub(/ /,'_')) %>" src="http://www.PerlitaLabs.com/Social_Bookmark_Builder_1_2/icons/24/facebook.png" alt="Add to FaceBook" /></a><a href="http://www.stumbleupon.com/submit?url=mad_ones_url&title=Mad Ones" ><img title="StumbleUpon : Mad Ones : mad_ones_url" src="http://www.PerlitaLabs.com/Social_Bookmark_Builder_1_2/icons/24/stumbleupon.png" alt="Add to StumbleUpon" /></a><a href="http://twitter.com/home?status=mad_ones_url" ><img title="Twitter : Mad Ones : mad_ones_url" src="http://www.PerlitaLabs.com/Social_Bookmark_Builder_1_2/icons/24/twitter.png" alt="Add to Twitter" /></a>
+			<a href="http://www.facebook.com/sharer.php?u=http://uwdesign2011.com<%= person_path(@person, :anchor => project.name.downcase.gsub(/ /,'_')) %>&t=<%= project.name %>" ><img title="FaceBook : <%= project.name %> : http://uwdesign2011.com<%= person_path(@person, :anchor => project.name.downcase.gsub(/ /,'_')) %>" src="http://www.PerlitaLabs.com/Social_Bookmark_Builder_1_2/icons/24/facebook.png" alt="Add to FaceBook" /></a>
+			<a href="http://www.stumbleupon.com/submit?url=mad_ones_url&title=Mad Ones" ><img title="StumbleUpon : Mad Ones : mad_ones_url" src="http://www.PerlitaLabs.com/Social_Bookmark_Builder_1_2/icons/24/stumbleupon.png" alt="Add to StumbleUpon" /></a>
+			
+			<a href="http://twitter.com/home?status=http://uwdesign2011.com<%= person_path(@person, :anchor => project.name.downcase.gsub(/ /,'_')) %>" ><img title="Twitter : Mad Ones : http://uwdesign2011.com<%= person_path(@person, :anchor => project.name.downcase.gsub(/ /,'_')) %>" src="http://www.PerlitaLabs.com/Social_Bookmark_Builder_1_2/icons/24/twitter.png" alt="Add to Twitter" /></a>
 		</h4>
 	
 		<h4 class="see_more">See more projects in:<br />
