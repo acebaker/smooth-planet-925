@@ -28,7 +28,7 @@ h1, h2, h3, h1 a {
 
 #container {
 	width:auto;
-	max-width:2000px;
+	/* max-width:2000px; */
 }
 
 header .logo {
@@ -224,11 +224,17 @@ h4.person_name:hover {
 
 #person_contact {
 	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 #person_about {
 	padding-top: 160px;
-	font-size: 3em;
+	padding-bottom: 20px;
+	font-size: 2em;
+}
+
+.description {
+	margin-bottom: 20px;
 }
 
 h3.subhead {

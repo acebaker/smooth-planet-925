@@ -1,11 +1,11 @@
 <div id="person_info">
-
 	<h2 id="person_name"><%= @person.fname %> <br /><%= @person.lname %></h2>
 	<div id="person_image">
 		<%= image_tag("content/people/profiles/Profile_#{@person.lname}.jpg", :alt => @person.lname, :width => "150px" )%>
 	</div>
-
 </div> <!-- end #person_info -->
+
+
 
 <p id="person_about"><%= @person.about %></p>
 
@@ -21,16 +21,21 @@
 	<div id="<%= project.name.downcase.gsub(/ /,'_') %>" class="project"><h2><%= project.name %></h2>
 		<p class="description"><%= project.description %></p>
 		<div id="images">
+			<% project.videos.each do |video| %>
+			<iframe src="http://player.vimeo.com/video/<%= video.vimeonumber %>?byline=0&amp;portrait=0&amp;color=ffffff" width="600" height="338" frameborder="0"></iframe>
+			<% end %>
 			<% project.images.each do |image| %>
 				<%= image_tag("content/projects/large/#{image.image_url}", :alt => image.image_url )%>
 			<% end %>
 		</div>
-		<h4 class="social">
-			<a href="http://www.facebook.com/sharer.php?u=http://uwdesign2011.com<%= person_path(@person, :anchor => project.name.downcase.gsub(/ /,'_')) %>&t=<%= project.name %>" ><img title="FaceBook : <%= project.name %> : http://uwdesign2011.com<%= person_path(@person, :anchor => project.name.downcase.gsub(/ /,'_')) %>" src="http://www.PerlitaLabs.com/Social_Bookmark_Builder_1_2/icons/24/facebook.png" alt="Add to FaceBook" /></a>
-			<a href="http://www.stumbleupon.com/submit?url=mad_ones_url&title=Mad Ones" ><img title="StumbleUpon : Mad Ones : mad_ones_url" src="http://www.PerlitaLabs.com/Social_Bookmark_Builder_1_2/icons/24/stumbleupon.png" alt="Add to StumbleUpon" /></a>
+		
+		<div class="social">
+			<iframe src="http://www.facebook.com/plugins/like.php?app_id=131157443624950&amp;href=http%3A%2F%2Fuwdesign2011.com%2Fpeople%2F<%= @person.id %>%23<%= project.name.downcase.gsub(/ /,'_') %>&amp;send=false&amp;layout=button_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:21px;" allowTransparency="true"></iframe>
 			
-			<a href="http://twitter.com/home?status=http://uwdesign2011.com<%= person_path(@person, :anchor => project.name.downcase.gsub(/ /,'_')) %>" ><img title="Twitter : Mad Ones : http://uwdesign2011.com<%= person_path(@person, :anchor => project.name.downcase.gsub(/ /,'_')) %>" src="http://www.PerlitaLabs.com/Social_Bookmark_Builder_1_2/icons/24/twitter.png" alt="Add to Twitter" /></a>
-		</h4>
+			<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fuwdesign2011.com%2Fpeople%2F<%= @person.id %>%23<%= project.name.downcase.gsub(/ /,'_') %>&title=<%= project.name %>" ><img title="StumbleUpon : <%= project.name %> : http://uwdesign2011.com<%= person_path(@person, :anchor => project.name.downcase.gsub(/ /,'_')) %>" src="http://www.PerlitaLabs.com/Social_Bookmark_Builder_1_2/icons/24/stumbleupon.png" alt="Add to StumbleUpon" /></a>
+			
+			<a href="http://twitter.com/home?status=http%3A%2F%2Fuwdesign2011.com%2Fpeople%2F<%= @person.id %>%23<%= project.name.downcase.gsub(/ /,'_') %>" ><img title="Twitter : <%= project.name %> : http://uwdesign2011.com<%= person_path(@person, :anchor => project.name.downcase.gsub(/ /,'_')) %>" src="http://www.PerlitaLabs.com/Social_Bookmark_Builder_1_2/icons/24/twitter.png" alt="Add to Twitter" /></a>
+		</div>
 	
 		<h4 class="see_more">See more projects in:<br />
 			<ul>

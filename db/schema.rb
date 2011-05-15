@@ -10,10 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110512061119) do
+ActiveRecord::Schema.define(:version => 20110515200141) do
 
-# Could not dump table "categories" because of following StandardError
-#   Unknown type '' for column 'nav_name'
+  create_table "categories", :force => true do |t|
+    t.text      "nav_name"
+    t.string    "name"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+  end
 
   create_table "categories_projects", :id => false, :force => true do |t|
     t.integer "project_id"
@@ -34,12 +38,15 @@ ActiveRecord::Schema.define(:version => 20110512061119) do
   end
 
   create_table "images_projects", :id => false, :force => true do |t|
-    t.integer "image_id"
     t.integer "project_id"
+    t.integer "image_id"
   end
 
-# Could not dump table "majors" because of following StandardError
-#   Unknown type '' for column 'nav_name'
+  create_table "majors", :force => true do |t|
+    t.text "nav_name"
+    t.text "name"
+    t.text "short_name"
+  end
 
   create_table "majors_people", :id => false, :force => true do |t|
     t.integer "major_id"
@@ -64,9 +71,20 @@ ActiveRecord::Schema.define(:version => 20110512061119) do
   end
 
   create_table "projects", :force => true do |t|
-    t.string   "name"
-    t.string   "image_url"
-    t.datetime "nav_name"
+    t.text   "description"
+    t.string "name"
+    t.string "thumb_url"
+    t.text   "nav_name"
+  end
+
+  create_table "videos", :force => true do |t|
+    t.string "name"
+    t.string "vimeonumber"
+  end
+
+  create_table "videos_projects", :id => false, :force => true do |t|
+    t.integer "video_id_id"
+    t.integer "project_id_id"
   end
 
 end
