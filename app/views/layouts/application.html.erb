@@ -1,9 +1,13 @@
 <!DOCTYPE html>
+
 <html>
 	<head>
 	  	<title><%= title %></title>
 		<%= render 'layouts/stylesheets' %>
 		<%= javascript_include_tag :all %>
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 		<%= render 'layouts/analytics' %>
 		<%= csrf_meta_tag %>
 		
