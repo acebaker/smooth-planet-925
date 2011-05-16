@@ -1,7 +1,7 @@
 class PeopleController < ApplicationController
   def index
     @title = "People"
-    @people = Person.all.sort! { |a,b| a.lname.downcase <=> b.lname.downcase }
+    @people = Person.all.sort!{ |a,b| a.lname.downcase <=> b.lname.downcase }
     @navs = Major.all.sort! { |a,b| a.name.downcase <=> b.name.downcase }
     
     @ds  = Major.find_by_name('Design Studies').people.sort! { |a,b| a.lname.downcase <=> b.lname.downcase }
