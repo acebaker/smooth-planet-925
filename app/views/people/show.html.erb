@@ -6,27 +6,23 @@
 </div> <!-- end #person_info -->
 
 
-
 <p id="person_about"><%= @person.about %></p>
 
-<div id="all">
-	<% @person.projects.each do |project| %>
-	<div class="work">
-		<%= link_to image_tag("content/projects/thumbnails/#{project.thumb_url}", :alt => project.name ), person_path(@person, :anchor => project.name.downcase.gsub(/ /,'_')), :class => "scroll" %>
-	</div>
-	<% end %>
-</div>
+
 
 <% @person.projects.each do |project| %>
-	<div id="<%= project.name.downcase.gsub(/ /,'_') %>" class="project"><h2><%= project.name %></h2>
+	<div id="<%= project.name.downcase.gsub(/ /,'_') %>" class="project">
+		<h2><%= project.name %></h2>
 		<p class="description"><%= project.description %></p>
+		<% project.videos.each do |video| %>
 		<div id="images">
-			<% project.videos.each do |video| %>
 			<iframe src="http://player.vimeo.com/video/<%= video.vimeonumber %>?byline=0&amp;portrait=0&amp;color=ffffff" width="600" height="338" frameborder="0"></iframe>
-			<% end %>
-			<% project.images.each do |image| %>
-				<%= image_tag("content/projects/large/#{image.image_url}", :alt => image.image_url )%>
-			<% end %>
+		</div>
+		<% end %>
+		<div id="images">
+		<% project.images.each do |image| %>
+			<%= image_tag("content/projects/large/#{image.image_url}", :alt => image.image_url )%>
+		<% end %>
 		</div>
 		
 		<div class="social">

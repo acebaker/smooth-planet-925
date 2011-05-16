@@ -122,17 +122,17 @@ nav#subnav .subnav-phrase, nav#subnav img {
 
 header nav#subnav ul li {
 	margin-bottom: 10px;
+	width: 150px;
+	height:20px;
 }
 
 header nav#subnav ul li a {
 	color: rgb(150,150,150);
 }
 
-header nav#subnav ul li a:hover {
-	color: black;
-	font-weight:normal;
+header nav#subnav ul li a.current {
 	list-style-position: outside;
-	list-style-image: url(cat.jpg);
+	list-style-image: url(../images/general/xpmenu_arrow.gif);
 }
 
 header nav#subnav ul li:hover {
@@ -140,6 +140,12 @@ header nav#subnav ul li:hover {
 	list-style-image: url(../images/general/xpmenu_arrow.gif);
 }
 
+header nav#subnav ul li:hover a {
+	color: black;
+	font-weight:normal;
+	list-style-position: outside;
+	list-style-image: url(cat.jpg);
+}
 
 #content {
 	height: 100%;
