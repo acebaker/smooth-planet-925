@@ -17,10 +17,6 @@ class ProjectsController < ApplicationController
   	@product  = Category.find_by_name('Product').projects.sort! { |a,b| a.name.downcase <=> b.name.downcase }
   	@service  = Category.find_by_name('Service').projects.sort! { |a,b| a.name.downcase <=> b.name.downcase }
   	@web  = Category.find_by_name('Web').projects.sort! { |a,b| a.name.downcase <=> b.name.downcase }
-  	
-  	# every 10 projects, insert one circle from the circle table
-  	
-  	#@insert = Category.all
     
     
     respond_to do |format|

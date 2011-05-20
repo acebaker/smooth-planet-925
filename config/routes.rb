@@ -1,5 +1,6 @@
 UwTest::Application.routes.draw do
   resources :projects
+  resources :group_projects
   resources :categories
   resources :people
   resources :images
@@ -7,7 +8,7 @@ UwTest::Application.routes.draw do
   match '/about_uw_design', :to => 'pages#about_uw_design'
   match '/show_information', :to => 'pages#show_information'
   
-  
+  match 'group_projects', :to => 'projects#group_projects'
 
   
   #root :to => 'projects#index'
