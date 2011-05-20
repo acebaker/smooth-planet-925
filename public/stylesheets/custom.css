@@ -17,7 +17,7 @@ a img {
 }
 
 h1, h2, h3, h1 a {
-	font-family: "TitlingGothicBold", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
 .clear {
@@ -173,10 +173,15 @@ header nav#subnav ul li:hover a {
 
 h2 {
 	margin-bottom: 10px;
-	letter-spacing: 0.4em;
-	font-weight: normal;
-	font-size: .8em;
+	font-weight: bold;
+	font-size: 18px;
 	text-transform: uppercase;	
+}
+
+h2#person_name {
+	font-size: .9em;
+	/*font-family: "Georgia";
+	font-weight: bold; */
 }
 
 #home {
@@ -231,12 +236,20 @@ h4.person_name:hover {
 }
 
 #person_about {
-	padding-top: 160px;
+	font-family: "Georgia";
+	font-weight: bold;
+	font-style: italic;
+	width: 560px;
+	padding-top: 235px;
 	padding-bottom: 20px;
-	font-size: 2em;
+	font-size: 1.3em;
+	line-height: 1.3em;
 }
 
 .description {
+	font-size: 11px;
+	line-height: 14px;
+	width: 560px;
 	margin-bottom: 20px;
 }
 
@@ -331,6 +344,68 @@ img.arrow {
 .showfollow h5 {
 	text-transform: uppercase;
 	font-weight: bold;
+
+}
+
+.designinfo p#program {
+	font-family: georgia, times, serif;
+	font-weight: bold;
+	font-style: italic;
+	width: 700px;
+	margin-bottom: 60px;
+	font-size: 1.3em;
+	line-height: 1.3em;
+}
+
+.designinfo img {
+	margin-bottom: 60px;
+	clear:left;
+}
+
+.designinfo #columncontainer {
+	margin-bottom: 50px;
+}
+
+.designinfo ul {
+	font-family: helvetica, arial, sans-serif;
+	font-size:12px;
+	width: 335px;
+	margin-bottom:35px;
+}
+
+.designinfo li.title {
+	text-transform: uppercase;
+	font-size:18px;
+	font-weight:bold;
+	margin-bottom: 5px;
+}
+
+.designinfo .column {
+	float:left;
+	margin-right:30px;
+}
+
+.facultyinfo img {
+	float:left;
+}
+
+.facultyinfo #profiles{
+	font-family:helvetica, arial, verdana;
+	padding-left: 40px;
+	float:left;
+	font-size: 10px;
+	width: 300px;
+}
+
+.facultyinfo #profiles .titles{
+	text-transform:uppercase;
+}
+
+#profiles h5 {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 18px;
+	padding-bottom: 4px;
 
 }
 

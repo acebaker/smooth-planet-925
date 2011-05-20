@@ -1,99 +1,74 @@
 <div id="all" class="category">
 	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
-	<%= render @projects %>
 	<div class="clear"></div>
 </div> <!-- end #all -->
 
 <div id="brand" class="category"><h2>Brand Design</h2>
-	<% @projects.each_with_index do |project, index| %>
-		<% iteration = index%3 %>
-  		<% if iteration == 2 %>
-			<%= "<div class='work'>#{image_tag("content/circles/Circles_0#{Circle.random.id}.gif")}</div>".html_safe %>
-		<% end %>
+	<% @brand.each do |project| %>
 		<%= render project %>
 	<% end %>
 	<div class="clear"></div>
 </div> <!-- end #brand -->
 
 <div id="exhibition" class="category"><h2>Exhibition Design</h2>
-	<%= render @projects %>
+	<% @exhibition.each do |project| %>
+		<%= render project %>
+	<% end %>
 	<div class="clear"></div>
 </div> <!-- end exhibition -->
 
 <div id="information" class="category"><h2>Information Design</h2>
-	<%= render @projects %>
-	<%= render @projects %>
+	<% @information.each do |project| %>
+		<%= render project %>
+	<% end %>
 	<div class="clear"></div>
 </div> <!-- end #information -->
 
 <div id="interaction" class="category"><h2>Interaction Design</h2>
-	<%= render @projects %>
+	<% @interaction.each do |project| %>
+		<%= render project %>
+	<% end %>
 	<div class="clear"></div>
 </div> <!-- end #interaction -->
 
 <div id="motion" class="category"><h2>Motion Design</h2>
-	<%= render @projects %>
+	<% @motion.each do |project| %>
+		<%= render project %>
+	<% end %>
 	<div class="clear"></div>
 </div> <!-- end #motion -->
 	
 <div id="packaging" class="category"><h2>Packaging Design</h2>
-	<%= render @projects %>
+	<% @packaging.each do |project| %>
+		<%= render project %>
+	<% end %>
 	<div class="clear"></div>
 </div> <!-- end #packaging -->
 
 <div id="print" class="category"><h2>Print Design</h2>
-	<%= render @projects %>
-	<%= render @projects %>
+	<% @print.each do |project| %>
+		<%= render project %>
+	<% end %>
 	<div class="clear"></div>
 </div> <!-- end #print -->
 
 <div id="product" class="category"><h2>Product Design</h2>
-	<%= render @projects %>
+	<% @product.each do |project| %>
+		<%= render project %>
+	<% end %>
 	<div class="clear"></div>
 </div> <!-- end #product -->
 
 <div id="service" class="category"><h2>Service Design</h2>
-	<%= render @projects %>
-	<%= render @projects %>
+	<% @service.each do |project| %>
+		<%= render project %>
+	<% end %>
 	<div class="clear"></div>
 </div> <!-- end #service -->
 	
 <div id="web" class="category"><h2>Web Design</h2>
-	<%= render @projects %>
-	<%= render @projects %>
+	<% @web.each do |project| %>
+		<%= render project %>
+	<% end %>
 	<div class="clear"></div>
 </div> <!-- end #web -->
