@@ -21,6 +21,7 @@ class PeopleController < ApplicationController
     
     @person = Person.find(params[:id])
     @title = @person.fname + " " + @person.lname
+    @navs = @person.projects
     
     @active_nav = "people"
     

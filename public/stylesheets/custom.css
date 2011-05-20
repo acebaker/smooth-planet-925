@@ -141,8 +141,6 @@ header nav#subnav ul li:hover {
 header nav#subnav ul li:hover a {
 	color: black;
 	font-weight:normal;
-	list-style-position: outside;
-	list-style-image: url(cat.jpg);
 }
 
 #content {
@@ -151,6 +149,7 @@ header nav#subnav ul li:hover a {
 	margin-left: 190px;
 	margin-right: 20px;
 	margin-bottom: 40px;
+	position: relative;
 }
 
 .work {
@@ -258,9 +257,86 @@ h2.focalpoint {
 	border-bottom: 1px solid #fff700;
 }
 
-#bottom {
+img#theshowtitles {
+position:absolute;
+}
+
+img#theshowline{
+margin-bottom:60px;
+}
+
+img#seeyou{
+position:fixed;
+left: 54px;
+}
+
+#show_info {
+	padding-top: 238px;
+}
+
+
+h5.info{
+	font-size:13px;
+	text-transform: uppercase;
+	font-weight:bold;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	margin-bottom:5px;
+
+}
+
+img.arrow {
+	margin-left:-40px;
 	float:left;
-	clear:both;
+}
+
+.showinfo{
+	position:relative;
+	left: 428px;
+	font-weight: normal;
+	font-size: 13px;
+	margin-bottom: 100px;
+}
+
+.showinfo .column {
+	float:left;
+	margin-right:30px;
+}
+
+.showinfo ul{
+	padding-bottom:15px;
+}
+
+.showinfo li {
+	font-size:10px;
+}
+.showinfo li.title {
+	margin-bottom: 3px;
+	font-size: 10px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.showfollow {
+	font-size: 10px;
+	position: fixed;
+	bottom: 56px;
+	right: 50px;
+}
+
+.showfollow img {
+	vertical-align: middle;
+
+}
+
+.showfollow h5 {
+	text-transform: uppercase;
+	font-weight: bold;
+
+}
+
+#bottom {
+	float: left;
+	clear: both;
 	margin-top: 30px;
 	margin-bottom: 20px;
 	height: 50px;

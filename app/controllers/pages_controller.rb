@@ -11,5 +11,7 @@ class PagesController < ApplicationController
   def show_information
     @title = "Show Information"
     @active_nav = "show_info"
+    
+    @sub_image = "seeyouthere"
   end
 end

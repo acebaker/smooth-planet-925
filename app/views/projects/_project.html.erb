@@ -3,7 +3,7 @@
 			<% @pageuri = person.id %>
 		<% end %>
 		
-		<%= link_to image_tag("content/projects/thumbnails/#{project.thumb_url}", :alt => project.name ), person_path(@pageuri, :anchor => project.name.downcase.gsub(/ /,'_')) %>
+		<%= link_to image_tag("content/projects/thumbnails/#{project.thumb_url}", :alt => project.name, :height => '120px' ), person_path(@pageuri, :anchor => project.name.downcase.gsub(/ /,'_')) %>
 		
 	</div>
 
