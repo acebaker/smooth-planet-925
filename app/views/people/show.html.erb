@@ -3,7 +3,10 @@
 	<div id="person_image">
 		<%= image_tag("content/people/profiles/Profile_#{@person.fname + @person.lname}.jpg", :alt => @person.lname, :width => "130px" )%>
 	</div>
-	<p class="person_contact"><%= link_to @person.contact, "http://" + @person.contact %>
+	<p class="person_contact"><%= link_to @person.contact, "http://" + @person.contact %></p>
+		
+		<%= link_to "Previous", "/people/#{@previous.id}", :class => "prevnext" %>
+		<%= link_to "Next", "/people/#{@next.id}", :class => "prevnext" %>
 </div> <!-- end #person_info -->
 
 <p id="person_about"><%= @person.about %></p>

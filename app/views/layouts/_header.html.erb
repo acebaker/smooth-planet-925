@@ -15,16 +15,34 @@
 		<% else %>
 			<%= image_tag("general/#{@sub_image}.png", :alt => @sub_image ) %>
 		<% end %>
-		<ul>
-			<% if defined?(@navs).nil? %>
-				<%= print "var is not defined\n" %>
-			<% else %>
+		
+		<% if defined?(@navs).nil? %>
+			<%= print "var is not defined\n" %>
+		<% else %>
+			<ul>
 				<li><a href='#all' class="scroll">All</a></li>
 			
 				<% @navs.each do |nav| %>
-				<li><a href='/#<%= nav.name.downcase.gsub(/ /,'_') %>' class="scroll"><%= nav.nav_name.gsub(/,/,"<br />").html_safe %></a></li>
+				<li><a href='/#<%= nav.name.downcase.gsub(/ /,'_') %>' class="scroll">
+					<% if nav.nav_name.nil? %>
+						<%= nav.name %>
+						
+					<% else %>
+						<%= nav.nav_name.gsub(/,/,"<br />").html_safe %>
+						
+					<% end %>
+				</a></li>
 				<% end %>
-			<% end %>
-		</ul>
+			</ul>
+		<% end %>
+		
+		<% if defined?(@navs2).nil? %>
+			<%= print "var is not defined\n" %>
+		<% else %>
+			<ul id="third_nav">
+				<li><%= link_to 'Group Projects', "/group_projects" %></li>
+			</ul>
+		<% end %>
+		
 	</nav><!-- end #categories -->
 </header>

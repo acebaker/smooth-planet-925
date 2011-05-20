@@ -119,6 +119,10 @@ nav#main ul li a:hover {
 	font-weight:bold;
 }
 
+.prevnext {
+	font-size: 10px;
+}
+
 header nav#subnav {
 	position: fixed;
 	top: 176px;
@@ -150,6 +154,12 @@ header nav#subnav ul li:hover {
 header nav#subnav ul li:hover a {
 	color: black;
 	font-weight:normal;
+}
+
+#third_nav li {
+	border-top: 1px solid #fff700;
+	margin-top: 30px;
+	padding-top:10px;
 }
 
 #content {

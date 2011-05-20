@@ -23,6 +23,18 @@ class PeopleController < ApplicationController
     @title = @person.fname + " " + @person.lname
     #@navs = @person.projects
     
+    if @person.id <= 1
+      @previous = Person.last
+    else
+      @previous = Person.find(@person.id.-1)
+    end
+    
+    if @person.id >= Person.last.id
+      @next = Person.first
+    else
+      @next = Person.find(@person.id.+1)
+    end
+    
     @active_nav = "people"
     
     respond_to do |format|
