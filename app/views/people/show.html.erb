@@ -1,7 +1,7 @@
 <div id="person_info">
 	<h2 id="person_name"><%= @person.fname %> <br /><%= @person.lname %></h2>
 	<div id="person_image">
-		<%= image_tag("content/people/profiles/Profile_#{@person.fname + @person.lname}.jpg", :alt => @person.lname, :width => "130px" )%>
+		<%= image_tag("content/people/profiles/Profile_#{@person.fname + @person.lname}.jpg", :mouseover => "content/people/rollover/Profile_#{@person.fname + @person.lname}_2.jpg", :alt => @person.lname, :width => "130px" )%>
 	</div>
 	<p class="person_contact"><%= link_to @person.contact, "http://" + @person.contact %></p>
 		

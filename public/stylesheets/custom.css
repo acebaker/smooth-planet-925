@@ -193,9 +193,10 @@ header nav#subnav ul li:hover a {
 .category, .project {
 	clear: both;
 	display: block;
-	padding-top: 180px;
+	padding-top: 237px;
 	padding-bottom: 10px;
 	border-bottom: 1px solid #fff700;
+	margin-bottom: -100px;
 }
 
 h2 {
@@ -225,6 +226,7 @@ h2#person_name {
 	top: 160px;
 	left: 20px;
 }
+
 
 h2#person_name {
 	padding-top: 10px;
@@ -267,8 +269,9 @@ p.person_contact a {
 	font-weight: bold;
 	font-style: italic;
 	width: 560px;
+	height: 220px;
 	padding-top: 235px;
-	padding-bottom: 20px;
+	margin-bottom: -220px;
 	font-size: 1.3em;
 	line-height: 1.3em;
 }
