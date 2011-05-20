@@ -305,6 +305,7 @@ img.arrow {
 .showinfo{
 	position:relative;
 	left: 428px;
+	width: 350px;
 	font-weight: normal;
 	font-size: 13px;
 	margin-bottom: 100px;
@@ -312,7 +313,7 @@ img.arrow {
 
 .showinfo .column {
 	float:left;
-	margin-right:30px;
+	margin-right:50px;
 }
 
 .showinfo ul{
