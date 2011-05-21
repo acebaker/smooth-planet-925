@@ -32,12 +32,10 @@
 
 			    var scrollview = new Y.ScrollView({
 			        srcNode:"#content",
-			        height:"20em"
+			        height:"100%"
 			    });
 
 			});
-			
-			var scrollview = new Y.ScrollView({ ... });
 			    scrollview.render();
 			
 		</script>
@@ -46,7 +44,8 @@
 	<body>
 		<div id="container" class="yui3-widget yui3-scrollview yui3-scrollview-vert">
 			<%= render 'layouts/header' %>
-			<div id="content" class="yui3-scrollview-content">
+			<div id="content" class="yui3-scrollview-content" style="left: 0px; top: 0px;">
+				
 				<%= yield %>
 				<div id="bottom">
 					<a href='#all' class="scroll">Back to Top</a>
