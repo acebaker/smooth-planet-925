@@ -7,6 +7,9 @@
 	  	<title><%= title %></title>
 		<%= render 'layouts/stylesheets' %>
 		<%= javascript_include_tag :all %>
+		
+		<script src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"
+		    charset="utf-8"></script>
 		<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		
@@ -23,11 +26,35 @@
 			}
 		</style>
 		
+		<script type="text/javascript">
+			$(document).ready(function(){
+			// Create a new YUI instance and populate it with the required modules.
+			YUI().use('scrollview', function (Y) {
+
+			    // ScrollView is available and ready for use.
+
+			});
+			
+			YUI({...}).use("scrollview", function(Y) {
+
+			    var scrollview = new Y.ScrollView({
+			        srcNode:"#content",
+			        height:"20em"
+			    });
+
+			});
+			
+			var scrollview = new Y.ScrollView({ ... });
+			    scrollview.render();
+			
+			};
+		</script>
+		
 	</head>
 	<body>
-		<div id="container">
+		<div id="container" class="yui3-widget yui3-scrollview yui3-scrollview-vert">
 			<%= render 'layouts/header' %>
-			<div id="content">
+			<div id="content" class="yui3-scrollview-content">
 				<%= yield %>
 				<div id="bottom">
 					<a href='#all' class="scroll">Back to Top</a>

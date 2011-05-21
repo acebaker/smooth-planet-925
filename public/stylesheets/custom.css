@@ -451,3 +451,15 @@ img.arrow {
 #bottom a {
 	font-size: 10px;
 }
+
+/* Bounding Box */
+.yui3-scrollview {
+    position: relative; /* To provide positioning context */ 
+    overflow: hidden;   /* To clip scrolled content */
+    ...
+}
+ 
+/* Content Box */
+.yui3-scrollview-content {
+    position:relative; /* To allow positioning */
+}
