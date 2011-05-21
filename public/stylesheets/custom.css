@@ -463,3 +463,7 @@ img.arrow {
 .yui3-scrollview-content {
     position:relative; /* To allow positioning */
 }
+
+.yui3-js-enabled .yui3-scrollview-loading {
+    visibility:hidden;
+}
