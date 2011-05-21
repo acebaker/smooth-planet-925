@@ -8,8 +8,7 @@
 		<%= render 'layouts/stylesheets' %>
 		<%= javascript_include_tag :all %>
 		
-		<script src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"
-		    charset="utf-8"></script>
+
 		<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		
@@ -31,15 +30,20 @@
 		<div id="container" class="yui3-widget yui3-scrollview yui3-scrollview-vert">
 			<%= render 'layouts/header' %>
 			<div id="content" class="yui3-scrollview-loading">
-				<% if is_iphone? %>
-					<%= yield %>
-				<% end %>
+				
+				<%= yield %>
+				
 				<div id="bottom">
 					<a href='#all' class="scroll">Back to Top</a>
 				</div> <!-- end #bottom -->
 			</div> <!-- end #content -->
 		</div> <!-- end #container -->
 	</body>
+	
+	<% if is_iphone? %>
+	<script src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"
+	    charset="utf-8"></script>
+	
 	
 	<script type="text/javascript">
 		YUI().use('scrollview-base', function(Y) {
@@ -58,5 +62,5 @@
 		    scrollView.render();
 		})
 	</script>
-	
+	<% end %>
 </html>
