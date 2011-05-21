@@ -32,7 +32,7 @@
 
 			    var scrollview = new Y.ScrollView({
 			        srcNode:"#content",
-			        height:"5000px"
+			        height:"100%"
 			    });
 				scrollview.render();
 			});
@@ -43,7 +43,7 @@
 	<body>
 		<div id="container" class="yui3-widget yui3-scrollview yui3-scrollview-vert">
 			<%= render 'layouts/header' %>
-			<div id="content" class="yui3-scrollview-content" style="left: 0px; top: 0px;">
+			<div id="content" class="yui3-scrollview-content">
 				
 				<%= yield %>
 				<div id="bottom">
