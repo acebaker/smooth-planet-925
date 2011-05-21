@@ -26,18 +26,6 @@
 			}
 		</style>
 		
-		<script type="text/javascript">
-			// Create a new YUI instance and populate it with the required modules.
-			YUI().use("scrollview", function (Y) {
-
-			    var scrollview = new Y.ScrollView({
-			        srcNode:"#scrollable",
-			    });
-				scrollview.render();
-			});
-			    
-		</script>
-		
 	</head>
 	<body>
 		<div id="container" class="yui3-widget yui3-scrollview yui3-scrollview-vert" style="height: 100%;">
@@ -51,4 +39,17 @@
 			</div> <!-- end #content -->
 		</div> <!-- end #container -->
 	</body>
+	
+	<script type="text/javascript">
+		// Create a new YUI instance and populate it with the required modules.
+		YUI().use("scrollview", function (Y) {
+
+		    var scrollview = new Y.ScrollView({
+		        srcNode:"#content",
+		    });
+			scrollview.render();
+		});
+		    
+	</script>
+	
 </html>
