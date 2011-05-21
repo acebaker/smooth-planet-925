@@ -31,8 +31,9 @@
 		<div id="container" class="yui3-widget yui3-scrollview yui3-scrollview-vert">
 			<%= render 'layouts/header' %>
 			<div id="content" class="yui3-scrollview-loading">
-				
-				<%= yield %>
+				<% if is_iphone? %>
+					<%= yield %>
+				<% end %>
 				<div id="bottom">
 					<a href='#all' class="scroll">Back to Top</a>
 				</div> <!-- end #bottom -->
