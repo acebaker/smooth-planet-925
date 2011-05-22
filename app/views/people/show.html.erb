@@ -1,16 +1,25 @@
 <div id="person_info">
-	<h2 id="person_name"><%= @person.fname %> <br /><%= @person.lname %></h2>
+	<%= link_to "Previous", "/people/#{@previous.id}", :class => "prevnext" %>
+	<%= link_to "Next", "/people/#{@next.id}", :class => "prevnext" %>
+	
+	<h2 id="person_name"><%= @person.fname %><br /><%= @person.lname %></h2>
 	<div id="person_image">
 		<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/people/profiles/Profile_#{@person.fname + @person.lname}.jpg", :mouseover => "https://s3.amazonaws.com/uwdesign2011/images/content/people/rollover/Profile_#{@person.fname + @person.lname}_2.jpg", :alt => @person.lname, :width => "130px" )%>
 	</div>
+	
 	<p class="person_contact"><%= link_to @person.contact, "http://" + @person.contact %></p>
+	
+	<ul>
+	<% @person.projects.each do |project| %>
+		<li><%= link_to project.name, '#' + project.name.downcase.gsub(/ /,'_'), :class => 'scroll' %></li>
+	<% end %>
+	</ul>
 		
 		
-		<%= link_to "Previous", "/people/#{@previous.id}", :class => "prevnext" %>
-		<%= link_to "Next", "/people/#{@next.id}", :class => "prevnext" %>
 </div> <!-- end #person_info -->
 
-<p id="person_about"><%= @person.about %></p>
+<!-- Put in find and replace for smart quotes -->
+<p id="person_about"><%= @person.about.gsub(/"/,'&#8220').html_safe %></p>
 
 
 <% @person.projects.each do |project| %>

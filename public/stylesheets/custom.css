@@ -121,6 +121,8 @@ nav#main ul li a:hover {
 
 .prevnext {
 	font-size: 10px;
+	margin-top:-50px;
+	margin-bottom: 20px;
 }
 
 header nav#subnav {
@@ -163,7 +165,7 @@ header nav#subnav ul li:hover a {
 }
 
 #content {
-	height: 100%;
+	height:100%;
 	margin-top: 0px;
 	margin-left: 190px;
 	margin-right: 20px;
