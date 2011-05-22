@@ -13,7 +13,7 @@ module ApplicationHelper
   end
   
   # Checks UserAgent
-  def is_iphone?
+  def is_mobile?
     ua = request.user_agent
     return false if ua.nil?
     return true if ua =~ /Mobile|webOS/

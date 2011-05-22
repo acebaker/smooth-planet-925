@@ -5,6 +5,7 @@ class Project < ActiveRecord::Base
   has_and_belongs_to_many :people
   has_and_belongs_to_many :images
   has_and_belongs_to_many :videos
+  belongs_to :group_project
   
   def self.random(options = {})
     count = self.count()

@@ -36,6 +36,11 @@ class PeopleController < ApplicationController
     end
     
     @active_nav = "people"
+    #@group_projects = @all_group_projects.find(GroupProject.person_id == @person.id)
+    #@all_group_projects = GroupProject.all
+    
+    
+    
     
     respond_to do |format|
       format.html # index.html.erb
