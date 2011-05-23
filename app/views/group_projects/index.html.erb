@@ -4,6 +4,13 @@
 		<h2><%= project.name.html_safe %></h2>
 		<p><%= project.description.html_safe %></p>
 		
+		<% project.videos.each do |video| %>
+		<div class="video">
+			<iframe src="http://player.vimeo.com/video/<%= video.vimeonumber %>?byline=0&amp;portrait=0&amp;color=ffffff" width="700" height="394" frameborder="0"></iframe>
+		</div>
+		<% end %>
+		
+		
 		<% project.images.each do |image| %>
 			<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/large/#{image.image_url.html_safe}", :alt => image.image_url )%>
 		<% end %>
@@ -13,6 +20,13 @@
 			<li><%= link_to "#{p.fname} #{p.lname}", person_path(p.id)  %></li>
 		<% end %>
 		</ul>
+		<h4 class="see_more">See more projects in:</h4>
+		<ul>
+		<% project.categories.each do |category| %>
+			<li><%= link_to category.name + " Design", projects_path(:anchor => category.name.downcase) %></li>
+		<% end %>
+		</ul>
+		<h1>Project Id: <%= project.id %></h1>
 	</div>
 	<% end %>
 	

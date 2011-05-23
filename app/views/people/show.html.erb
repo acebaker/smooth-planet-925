@@ -15,7 +15,7 @@
 			
 		<% if project.isGroup == 1 %>
 			<p class="alert group">Is group!</p>
-			<% project.group_project.each do |d| %>
+			<% project.group_projects.each do |d| %>
 			
 				<% d.images.each do |i| %>
 				<div class="image">
@@ -23,13 +23,17 @@
 				</div>
 				<% end %>
 				
-				<ul class="group_members">
-				<% d.people.sort! { |a,b| a.lname.downcase <=> b.lname.downcase }.each do |p| %>
+				<p class="group_members">Collaborated with <%= d.people.count %>
+				<% d.people.sort! { |a,b| a.lname.downcase <=> b.lname.downcase }.each_with_index do |p, i| %>
 					<% if p.id != @person.id %>
-					<li><%= link_to "#{p.fname} #{p.lname}", person_path(p.id)  %></li>
+					<%= link_to "#{p.fname} #{p.lname}", person_path(p.id)  %>
+					
+					<% if i < d.people.count - 1 %>
+						<%= ', '%>
+					<% end %>
 					<% end %>
 				<% end %>
-				</ul>
+				</p>
 			<% end %>
 		<% else %>
 			<p class="alert">Isn't group!</p>
@@ -45,12 +49,8 @@
 		
 		
 
-		<h4 class="see_more">See more projects in:</h4>
-		<ul>
-			<% project.categories.each do |category| %>
-			<li><%= link_to category.name + " Design", projects_path(:anchor => category.name.downcase) %></li>
-			<% end %>
-		</ul>
+		<p class="see_more">See more projects in <% project.categories.each_with_index do |category, i| %><%= link_to category.name + " Design", projects_path(:anchor => category.name.downcase) %><% if i==0%><%= ', ' %><% end %>
+		<% end %></p>
 		<div class="clear"></div>
 	</div> <!-- end #<%= project.name.downcase.gsub(/ /,'_') %> -->
 <% end %>

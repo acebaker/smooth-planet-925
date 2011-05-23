@@ -2,8 +2,10 @@ UwTest::Application.routes.draw do
   resources :projects
   resources :group_projects
   resources :categories
+  resources :majors
   resources :people
   resources :images
+  resources :videos
   
   match '/about_uw_design', :to => 'pages#about_uw_design'
   match '/show_information', :to => 'pages#show_information'
