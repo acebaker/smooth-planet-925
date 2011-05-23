@@ -1,12 +1,10 @@
-<div id="peoplenav">
-	<div class='icon_link'><%= link_to image_tag("/images/general/back.png", :alt => "Previous Person", :title => "Previous Person"), "/people/#{@previous.id}", :class => "prevnext" %></div>
-	<div class='icon_link'><%= link_to image_tag("/images/general/forward.png", :alt => "Next Person", :title => "Next Person"), "/people/#{@next.id}", :class => "prevnext" %></div>
-</div>
+<nav id="peoplenav">
+	<%= link_to image_tag("/images/general/back.png", :alt => "Previous Person", :title => "Previous Person"), "/people/#{@previous.id}", :class => "prevnext icon_link" %>
+	<%= link_to image_tag("/images/general/forward.png", :alt => "Next Person", :title => "Next Person"), "/people/#{@next.id}", :class => "prevnext icon_link" %>
+</nav>
 <div id="person_info">
 	<h2 id="person_name"><%= @person.fname.html_safe %><br /><%= @person.lname.html_safe %></h2>
-	<div id="person_image">
-		<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/people/profiles/Profile_#{@person.fname.html_safe + @person.lname.html_safe}.jpg", :mouseover => "https://s3.amazonaws.com/uwdesign2011/images/content/people/rollover/Profile_#{@person.fname.html_safe + @person.lname.html_safe}_2.jpg", :alt => @person.lname.html_safe, :width => "130px" )%>
-	</div>
+		<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/people/profiles/Profile_#{@person.fname.html_safe + @person.lname.html_safe}.jpg", :mouseover => "https://s3.amazonaws.com/uwdesign2011/images/content/people/rollover/Profile_#{@person.fname.html_safe + @person.lname.html_safe}_2.jpg", :alt => @person.lname.html_safe, :width => "130px", :class => "person_image" )%>
 	
 	<% if @person.contact.include?("@") %>
 		<% jtext = "Contact Info" %>
@@ -20,11 +18,13 @@
 	<% end %>
 	<p class="person_contact"><%= link_to jtext, jlink %></p>
 	
-	<ul>
-	<% @person.projects.each do |project| %>
-		<li><%= link_to project.name.html_safe, '#' + project.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,''), :class => 'scroll' %></li>
-	<% end %>
-	</ul>
+	<nav class="person_projects">
+		<ul>
+		<% @person.projects.each do |project| %>
+			<li><%= link_to project.name.html_safe, '#' + project.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,''), :class => 'scroll' %></li>
+		<% end %>
+		</ul>
+	</nav>
 </div> <!-- end #person_info -->
 
 

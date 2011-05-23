@@ -77,14 +77,10 @@ header {
 	z-index: 9999;
 }
 
-header a {
+header nav#main a {
 	color: #333333;
 	font-size: 12px;
 	text-decoration: none;
-}
-
-header a:hover {
-	font-weight: bold;
 }
 
 nav#main {
@@ -119,11 +115,6 @@ nav#main ul li a:hover {
 	padding-top: 5px;
 	border-color: black;
 	font-weight:bold;
-}
-
-nav#subnav .prevnext {
-	margin-bottom: 40px;
-	height: 30px;
 }
 
 header nav#subnav {
@@ -283,8 +274,8 @@ h4.person_name li a {
 h4.person_name:hover {
 	background: rgba(255,255,0,1);
 } */
-#person_image {
-	margin-top: 30px;
+.person_image {
+	/*margin-top: 30px;*/
 }
 
 p.person_contact {
