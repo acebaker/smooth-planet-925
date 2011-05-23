@@ -16,12 +16,25 @@
 			<%= image_tag("general/#{@sub_image}.png", :alt => @sub_image ) %>
 		<% end %>
 		
+		
+		<% if defined?(@person).nil? %>
+		<% else %>
+		<%= render 'people/info'%>
+		<% end %>
+		
+		
 		<% if defined?(@navs).nil? %>
 			<%= print "var is not defined\n" %>
 		<% else %>
 			<ul>
+				
+				<% if defined?(@group) %>
+				
+				<% else %>
 				<li><a href='#all' class="scroll">All</a></li>
-			
+				<% end %>
+				
+				
 				<% @navs.each do |nav| %>
 				<li><a href='/#<%= nav.name.downcase.gsub(/ /,'_') %>' class="scroll">
 					<% if nav.nav_name.nil? %>

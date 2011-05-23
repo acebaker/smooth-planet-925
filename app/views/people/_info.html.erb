@@ -1,0 +1,27 @@
+<div id="person_info">
+	<%= link_to "Previous", "/people/#{@previous.id}", :class => "prevnext" %>
+	<%= link_to "Next", "/people/#{@next.id}", :class => "prevnext" %>
+	
+	<h2 id="person_name"><%= @person.fname %><br /><%= @person.lname %></h2>
+	<div id="person_image">
+		<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/people/profiles/Profile_#{@person.fname + @person.lname}.jpg", :mouseover => "https://s3.amazonaws.com/uwdesign2011/images/content/people/rollover/Profile_#{@person.fname + @person.lname}_2.jpg", :alt => @person.lname, :width => "130px" )%>
+	</div>
+	
+	<% if @person.contact.include?("@") %>
+		<% jtext = "Contact Info" %>
+		<% jlink = "mailto:" + @person.contact %>
+	<% elsif @person.contact.include?("http://") %>
+		<% jtext = "Portfolio" %>
+		<% jlink = @person.contact %>
+	<% else %>
+		<% jtext = "Portfolio" %>
+		<% jlink = "http://" + @person.contact %>
+	<% end %>
+	<p class="person_contact"><%= link_to jtext, jlink %></p>
+	
+	<ul>
+	<% @person.projects.each do |project| %>
+		<li><%= link_to project.name, '#' + project.name.downcase.gsub(/ /,'_').gsub(/:/,''), :class => 'scroll' %></li>
+	<% end %>
+	</ul>
+</div> <!-- end #person_info -->

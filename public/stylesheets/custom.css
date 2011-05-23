@@ -121,18 +121,17 @@ nav#main ul li a:hover {
 
 .prevnext {
 	font-size: 10px;
-	margin-top:-50px;
-	margin-bottom: 20px;
 }
 
 header nav#subnav {
 	position: fixed;
 	top: 176px;
 	left: 36px;
+	width: 130px;
 }
 
 nav#subnav .subnav-phrase, nav#subnav img {
-	margin-bottom: 30px;	
+	margin-bottom: 30px;
 }
 
 header nav#subnav ul li {
@@ -222,12 +221,6 @@ h2#person_name {
 	font-size: 4em;
 }
 
-#person_info, #subnav {
-	position: fixed;
-	width: 130px;
-	top: 160px;
-	left: 20px;
-}
 
 
 h2#person_name {

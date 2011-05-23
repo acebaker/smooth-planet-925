@@ -1,34 +1,12 @@
-<div id="person_info">
-	<%= link_to "Previous", "/people/#{@previous.id}", :class => "prevnext" %>
-	<%= link_to "Next", "/people/#{@next.id}", :class => "prevnext" %>
-	
-	<h2 id="person_name"><%= @person.fname %><br /><%= @person.lname %></h2>
-	<div id="person_image">
-		<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/people/profiles/Profile_#{@person.fname + @person.lname}.jpg", :mouseover => "https://s3.amazonaws.com/uwdesign2011/images/content/people/rollover/Profile_#{@person.fname + @person.lname}_2.jpg", :alt => @person.lname, :width => "130px" )%>
-	</div>
-	
-	<p class="person_contact"><%= link_to @person.contact, "http://" + @person.contact %></p>
-	
-	<ul>
-	<% @person.projects.each do |project| %>
-		<li><%= link_to project.name, '#' + project.name.downcase.gsub(/ /,'_'), :class => 'scroll' %></li>
-	<% end %>
-	</ul>
-		
-		
-</div> <!-- end #person_info -->
-
-<!-- Put in find and replace for smart quotes -->
-<p id="person_about"><%= @person.about.gsub(/"/,'&#8220').html_safe %></p>
-
+<p id="person_about"><%= @person.about.html_safe %></p>
 
 <% @person.projects.each do |project| %>
-	<div id="<%= project.name.downcase.gsub(/ /,'_') %>" class="project">
+	<div id="<%= project.name.downcase.gsub(/ /,'_').gsub(/:/,'') %>" class="project">
 		<h2><%= project.name %></h2>
 		<p class="description"><%= project.description %></p>
 		<% project.videos.each do |video| %>
 		<div id="images">
-			<iframe src="http://player.vimeo.com/video/<%= video.vimeonumber %>?byline=0&amp;portrait=0&amp;color=ffffff" width="600" height="338" frameborder="0"></iframe>
+			<iframe src="http://player.vimeo.com/video/<%= video.vimeonumber %>?byline=0&amp;portrait=0&amp;color=ffffff" width="700" height="394" frameborder="0"></iframe>
 		</div>
 		<% end %>
 		<div id="images">
@@ -44,14 +22,13 @@
 
 			<a href="http://twitter.com/home?status=http%3A%2F%2Fuwdesign2011.com%2Fpeople%2F<%= @person.id %>%23<%= project.name.downcase.gsub(/ /,'_') %>" ><img title="Twitter : <%= project.name %> : http://uwdesign2011.com<%= person_path(@person, :anchor => project.name.downcase.gsub(/ /,'_')) %>" src="../images/general/twitter.gif" alt="Add to Twitter" /></a>
 		</div>
-	
-		<h4 class="see_more">See more projects in:<br />
-			<ul>
-				<% project.categories.each do |category| %>
-				<li><%= link_to category.name + " Design", projects_path(:anchor => category.name.downcase) %></li>
-				<% end %>
-			</ul>
-		</h4>
+
+		<h4 class="see_more">See more projects in:</h4>
+		<ul>
+			<% project.categories.each do |category| %>
+			<li><%= link_to category.name + " Design", projects_path(:anchor => category.name.downcase) %></li>
+			<% end %>
+		</ul>
 		<div class="clear"></div>
 	</div> <!-- end #<%= project.name.downcase.gsub(/ /,'_') %> -->
 <% end %>

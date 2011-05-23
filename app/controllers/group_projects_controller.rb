@@ -3,6 +3,8 @@ class GroupProjectsController < ApplicationController
     @projects = GroupProject.all.sort! { |a,b| a.name.downcase <=> b.name.downcase }
     @navs = GroupProject.all.sort! { |a,b| a.name.downcase <=> b.name.downcase }
     
+    @group = 1
+    
     @active_nav = "work"
     #Project.where("isCapstone = 1")
   
