@@ -1,7 +1,6 @@
 <div id="person_info">
-	<%= link_to "Previous", "/people/#{@previous.id}", :class => "prevnext" %>
-	<%= link_to "Next", "/people/#{@next.id}", :class => "prevnext" %>
-	
+		<%= link_to "Previous", "/people/#{@previous.id}", :class => "prevnext" %>
+		<%= link_to "Next", "/people/#{@next.id}", :class => "prevnext" %>
 	<h2 id="person_name"><%= @person.fname %><br /><%= @person.lname %></h2>
 	<div id="person_image">
 		<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/people/profiles/Profile_#{@person.fname + @person.lname}.jpg", :mouseover => "https://s3.amazonaws.com/uwdesign2011/images/content/people/rollover/Profile_#{@person.fname + @person.lname}_2.jpg", :alt => @person.lname, :width => "130px" )%>

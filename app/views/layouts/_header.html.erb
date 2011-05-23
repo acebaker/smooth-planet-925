@@ -36,9 +36,9 @@
 				
 				
 				<% @navs.each do |nav| %>
-				<li><a href='/#<%= nav.name.downcase.gsub(/ /,'_') %>' class="scroll">
+				<li><a href='/#<%= nav.name.downcase.gsub(/ /,'_').html_safe %>' class="scroll">
 					<% if nav.nav_name.nil? %>
-						<%= nav.name %>
+						<%= nav.name.html_safe %>
 						
 					<% else %>
 						<%= nav.nav_name.gsub(/,/,"<br />").html_safe %>

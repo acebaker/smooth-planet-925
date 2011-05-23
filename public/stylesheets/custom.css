@@ -119,13 +119,22 @@ nav#main ul li a:hover {
 	font-weight:bold;
 }
 
-.prevnext {
+nav#subnav .prevnext {
+	margin-bottom: 40px;
+	height: 30px;
+}
+
+nav#subnav .prevnext a, nav#subnav .prevnext a:hover {
+	float:left;
+	width:40px;
+	text-decoration:none;
+	font-weight: normal;
 	font-size: 10px;
 }
 
 header nav#subnav {
 	position: fixed;
-	top: 176px;
+	top: 160px;
 	left: 36px;
 	width: 130px;
 }
@@ -434,13 +443,16 @@ img.arrow {
 	padding-bottom: 4px;
 
 }
+#projects_end {
+	height:400px;
+}
 
 #bottom {
 	float: left;
 	clear: both;
 	margin-top: 30px;
 	margin-bottom: 20px;
-	height: 50px;
+	height: 50%;
 }
 
 #bottom a {

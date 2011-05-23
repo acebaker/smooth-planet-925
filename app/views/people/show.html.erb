@@ -3,7 +3,17 @@
 <% @person.projects.each do |project| %>
 	<div id="<%= project.name.downcase.gsub(/ /,'_').gsub(/:/,'') %>" class="project">
 		<h2><%= project.name %></h2>
-		<p class="description"><%= project.description %></p>
+		<p class="description"><%= project.description.html_safe %></p>
+		
+		
+		<% if project.isGroup == 1 %>
+		<% #find the group project that this project belongs to %>
+		<% #pull the group project images %>
+		
+		<% end %>
+		
+		
+		
 		<% project.videos.each do |video| %>
 		<div id="images">
 			<iframe src="http://player.vimeo.com/video/<%= video.vimeonumber %>?byline=0&amp;portrait=0&amp;color=ffffff" width="700" height="394" frameborder="0"></iframe>
@@ -32,3 +42,5 @@
 		<div class="clear"></div>
 	</div> <!-- end #<%= project.name.downcase.gsub(/ /,'_') %> -->
 <% end %>
+<div id="projects_end"></div>
+<div class="clear"></div>
