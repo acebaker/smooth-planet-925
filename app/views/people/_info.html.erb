@@ -20,7 +20,11 @@
 	
 	<ul>
 	<% @person.projects.each do |project| %>
-		<li><%= link_to project.name.html_safe, '#' + project.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(//,'').html_safe, :class => 'scroll' %></li>
+		<li><%= link_to project.name.html_safe, '#' + project.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,''), :class => 'scroll' %></li>
 	<% end %>
 	</ul>
 </div> <!-- end #person_info -->
+
+
+
+

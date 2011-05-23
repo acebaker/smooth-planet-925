@@ -1,7 +1,7 @@
 <p id="person_about"><%= @person.about.html_safe %></p>
 
 <% @person.projects.each do |project| %>
-	<div id="<%= project.name.downcase.gsub(/ /,'_').gsub(/:/,'').html_safe %>" class="project">
+	<div id="<%= project.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,'') %>" class="project">
 		<h2><%= project.name.html_safe %></h2>
 		<p class="description"><%= project.description.html_safe %></p>
 		

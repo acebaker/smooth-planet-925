@@ -1,7 +1,9 @@
 class ProjectsController < ApplicationController
   def index
     @title = "Work"
-    @projects = Project.all + GroupProject.all
+    @solo_projects = Project.all
+    @group_projects = GroupProject.all
+    @projects = @solo_projects + @group_projects
     @navs = Category.all.sort! { |a,b| a.name.downcase <=> b.name.downcase }
     @navs2 = "yes"
     @sub_image = "BestWorkPhrase"
@@ -9,7 +11,7 @@ class ProjectsController < ApplicationController
   	@active_nav = "work"
   	
   	@brand  = Category.find_by_name('Brand').projects.sort! { |a,b| a.name.downcase <=> b.name.downcase }
-  	@exhibition  = Category.find_by_name('Exhibition').projects.sort! { |a,b| a.name.downcase <=> b.name.downcase }
+  	@exhibition  = Category.find_by_name('Exhibition').projects.sort! { |a,b| a.name.downcase <=> b.name.downcase } + Category.find_by_name('Exhibition').group_projects.sort! { |a,b| a.name.downcase <=> b.name.downcase }
   	@information  = Category.find_by_name('Information').projects.sort! { |a,b| a.name.downcase <=> b.name.downcase }
   	@interaction  = Category.find_by_name('Interaction').projects.sort! { |a,b| a.name.downcase <=> b.name.downcase }
   	@motion  = Category.find_by_name('Motion').projects.sort! { |a,b| a.name.downcase <=> b.name.downcase }

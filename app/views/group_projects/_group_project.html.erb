@@ -1,6 +1,3 @@
 <div class="work">
-	<% project.people.each do |person| %>
-		<% @pageuri = person.id %>
-	<% end %>
-	<%= link_to image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/thumbnails/#{project.img}", :height => "120px"), person_path(@pageuri, :anchor => project.name.downcase.gsub(/ /,'_')) %>
+	<%= link_to image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/thumbnails/#{group_project.img}", :height => "120px"), 'group_projects#' + group_project.name.downcase.gsub(/ /,'_') %>
 </div>

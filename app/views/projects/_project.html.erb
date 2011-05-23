@@ -1,8 +1,13 @@
 <% if project.isCapstone != 1 && project.isGroup != 1 %>
 	<div class="work">
-		<% project.people.each do |person| %>
-			<% @pageuri = person.id %>
+		<% if project.id >= 500 %>
+		
+			<%= link_to image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/thumbnails/#{project.img}", :height => "120px"), 'group_projects#' + project.name.downcase.gsub(/ /,'_') %>
+		<% else %>
+			<% project.people.each do |person| %>
+				<% @pageuri = person.id %>
+			<% end %>
+			<%= link_to image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/thumbnails/#{project.img}", :height => "120px"), 'people/' + @pageuri.to_s + '#' + project.name.downcase.gsub(/ /,'_') %>
 		<% end %>
-		<%= link_to image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/thumbnails/#{project.img}", :height => "120px"), person_path(@pageuri, :anchor => project.name.downcase.gsub(/ /,'_')) %>
 	</div>
 <% end %>
