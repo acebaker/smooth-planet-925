@@ -1,4 +1,3 @@
 <div class="work">
-	<%= group_project.id %>
 	<%= link_to image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/thumbnails/#{group_project.img}", :height => "120px"), 'group_projects#' + group_project.name.downcase.gsub(/ /,'_') %>
 </div>
