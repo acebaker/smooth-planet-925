@@ -15,7 +15,7 @@
 a {
 	color: rgb(150,150,150);
 	text-decoration: none;
-	outline: 0;
+	/* outline: 0;*/
 	font-size: 12px;
 }
 
@@ -168,9 +168,13 @@ header nav#subnav ul li:hover a {
 	padding-top:10px;
 }
 
-.image img, .category img {
+
+.work img, .person img, {
+	display: inline;
+}
+
+.media img {
 	margin-bottom: 10px;
-	display: block;
 }
 
 .category p {
@@ -200,7 +204,7 @@ header nav#subnav ul li:hover a {
 	position: relative;
 }
 
-.work {
+.work, .person {
 	float: left;
 	margin-right: 10px;
 	margin-bottom: 20px;
