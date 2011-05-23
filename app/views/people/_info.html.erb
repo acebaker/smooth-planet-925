@@ -1,9 +1,9 @@
 <div id="person_info">
 		<%= link_to "Previous", "/people/#{@previous.id}", :class => "prevnext" %>
 		<%= link_to "Next", "/people/#{@next.id}", :class => "prevnext" %>
-	<h2 id="person_name"><%= @person.fname %><br /><%= @person.lname %></h2>
+	<h2 id="person_name"><%= @person.fname.html_safe %><br /><%= @person.lname.html_safe %></h2>
 	<div id="person_image">
-		<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/people/profiles/Profile_#{@person.fname + @person.lname}.jpg", :mouseover => "https://s3.amazonaws.com/uwdesign2011/images/content/people/rollover/Profile_#{@person.fname + @person.lname}_2.jpg", :alt => @person.lname, :width => "130px" )%>
+		<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/people/profiles/Profile_#{@person.fname.html_safe + @person.lname.html_safe}.jpg", :mouseover => "https://s3.amazonaws.com/uwdesign2011/images/content/people/rollover/Profile_#{@person.fname.html_safe + @person.lname.html_safe}_2.jpg", :alt => @person.lname.html_safe, :width => "130px" )%>
 	</div>
 	
 	<% if @person.contact.include?("@") %>
@@ -20,7 +20,7 @@
 	
 	<ul>
 	<% @person.projects.each do |project| %>
-		<li><%= link_to project.name, '#' + project.name.downcase.gsub(/ /,'_').gsub(/:/,''), :class => 'scroll' %></li>
+		<li><%= link_to project.name.html_safe, '#' + project.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(//,'').html_safe, :class => 'scroll' %></li>
 	<% end %>
 	</ul>
 </div> <!-- end #person_info -->
