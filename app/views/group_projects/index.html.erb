@@ -3,9 +3,14 @@
 	<div id="<%= project.name.downcase.gsub(/ /,'_') %>" class="category">
 		<h2><%= project.name %></h2>
 		<p><%= project.description %></p>
+		
+		<% project.images.each do |image| %>
+			<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/large/#{image.image_url.html_safe}", :alt => image.image_url )%>
+		<% end %>
+		
 		<ul>
 		<% project.people.each do |p| %>
-			<li><%= link_to p.fname + p.lname, "/people/#{p.id}" %></li>
+			<li><%= link_to "#{p.fname} #{p.lname}", person_path(p.id)  %></li>
 		<% end %>
 		</ul>
 	</div>

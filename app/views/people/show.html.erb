@@ -5,33 +5,45 @@
 		<h2><%= project.name %></h2>
 		<p class="description"><%= project.description.html_safe %></p>
 		
-		
+		<div class="media">
+			<% project.videos.each do |video| %>
+			<div class="video">
+				<iframe src="http://player.vimeo.com/video/<%= video.vimeonumber %>?byline=0&amp;portrait=0&amp;color=ffffff" width="700" height="394" frameborder="0"></iframe>
+			</div>
+			<% end %>
+			
+			
 		<% if project.isGroup == 1 %>
-		<% #find the group project that this project belongs to %>
-		<% #pull the group project images %>
-		
+			<p class="alert group">Is group!</p>
+			<% project.group_project.each do |d| %>
+			
+				<% d.images.each do |i| %>
+				<div class="image">
+					<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/large/#{i.image_url}", :alt => i.image_url )%>
+				</div>
+				<% end %>
+				
+				<ul class="group_members">
+				<% d.people.sort! { |a,b| a.lname.downcase <=> b.lname.downcase }.each do |p| %>
+					<% if p.id != @person.id %>
+					<li><%= link_to "#{p.fname} #{p.lname}", person_path(p.id)  %></li>
+					<% end %>
+				<% end %>
+				</ul>
+			<% end %>
+		<% else %>
+			<p class="alert">Isn't group!</p>
+			
+			
+			<div class="image">
+			<% project.images.each do |image| %>
+				<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/large/#{image.image_url}", :alt => image.image_url )%>
+			<% end %>
+			</div>
 		<% end %>
+		</div> <!-- end .media -->
 		
 		
-		
-		<% project.videos.each do |video| %>
-		<div id="images">
-			<iframe src="http://player.vimeo.com/video/<%= video.vimeonumber %>?byline=0&amp;portrait=0&amp;color=ffffff" width="700" height="394" frameborder="0"></iframe>
-		</div>
-		<% end %>
-		<div id="images">
-		<% project.images.each do |image| %>
-			<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/large/#{image.image_url}", :alt => image.image_url )%>
-		<% end %>
-		</div>
-		
-		<div class="social">
-			<iframe src="http://www.facebook.com/plugins/like.php?app_id=131157443624950&amp;href=http%3A%2F%2Fuwdesign2011.com%2Fpeople%2F<%= @person.id %>%23<%= project.name.downcase.gsub(/ /,'_') %>&amp;send=false&amp;layout=button_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:21px;" allowTransparency="true"></iframe>
-
-			<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fuwdesign2011.com%2Fpeople%2F<%= @person.id %>%23<%= project.name.downcase.gsub(/ /,'_') %>&title=<%= project.name %>" ><img title="StumbleUpon : <%= project.name %> : http://uwdesign2011.com<%= person_path(@person, :anchor => project.name.downcase.gsub(/ /,'_')) %>" src="../images/general/stumble.gif" alt="Add to StumbleUpon" /></a>
-
-			<a href="http://twitter.com/home?status=http%3A%2F%2Fuwdesign2011.com%2Fpeople%2F<%= @person.id %>%23<%= project.name.downcase.gsub(/ /,'_') %>" ><img title="Twitter : <%= project.name %> : http://uwdesign2011.com<%= person_path(@person, :anchor => project.name.downcase.gsub(/ /,'_')) %>" src="../images/general/twitter.gif" alt="Add to Twitter" /></a>
-		</div>
 
 		<h4 class="see_more">See more projects in:</h4>
 		<ul>

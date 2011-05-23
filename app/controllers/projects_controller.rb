@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   def index
     @title = "Work"
-    @projects = Project.all
+    @projects = Project.all + GroupProject.all
     @navs = Category.all.sort! { |a,b| a.name.downcase <=> b.name.downcase }
     @navs2 = "yes"
     @sub_image = "BestWorkPhrase"

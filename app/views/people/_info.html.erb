@@ -8,13 +8,13 @@
 	
 	<% if @person.contact.include?("@") %>
 		<% jtext = "Contact Info" %>
-		<% jlink = "mailto:" + @person.contact %>
+		<% jlink = "mailto:" + @person.contact.html_safe %>
 	<% elsif @person.contact.include?("http://") %>
 		<% jtext = "Portfolio" %>
-		<% jlink = @person.contact %>
+		<% jlink = @person.contact.html_safe %>
 	<% else %>
 		<% jtext = "Portfolio" %>
-		<% jlink = "http://" + @person.contact %>
+		<% jlink = "http://" + @person.contact.html_safe %>
 	<% end %>
 	<p class="person_contact"><%= link_to jtext, jlink %></p>
 	
