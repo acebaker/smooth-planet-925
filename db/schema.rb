@@ -10,14 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110515200141) do
+ActiveRecord::Schema.define(:version => 20110523181025) do
 
   create_table "categories", :force => true do |t|
-    t.text      "nav_name"
-    t.string    "name"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.text   "nav_name"
+    t.string "name"
   end
+
+  create_table "categories_group_projects", :id => false, :force => true do |t|
+    t.integer "categories_id"
+    t.integer "group_projects_id"
+  end
+
+# Could not dump table "categories_group_projects_old" because of following StandardError
+#   Unknown type '' for column 'group_project_id'
 
   create_table "categories_projects", :id => false, :force => true do |t|
     t.integer "project_id"
@@ -28,18 +34,46 @@ ActiveRecord::Schema.define(:version => 20110515200141) do
     t.string "circle_content"
   end
 
-  create_table "images", :force => true do |t|
-    t.string "image_url"
+  create_table "group_projects", :id => false, :force => true do |t|
+    t.integer "id"
+    t.text    "name"
+    t.text    "description"
+    t.text    "nav_name"
+    t.text    "img"
   end
 
-  create_table "images_people", :id => false, :force => true do |t|
-    t.integer "profile_image_id"
+  create_table "group_projects_images", :id => false, :force => true do |t|
+    t.integer "group_project_id"
+    t.integer "image_id"
+  end
+
+  create_table "group_projects_people", :id => false, :force => true do |t|
+    t.integer "group_project_id"
     t.integer "person_id"
+  end
+
+  create_table "group_projects_projects", :id => false, :force => true do |t|
+    t.integer "group_project_id"
+    t.integer "project_id"
+  end
+
+  create_table "group_projects_videos", :id => false, :force => true do |t|
+    t.integer "video_id"
+    t.integer "group_project_id"
+  end
+
+  create_table "images", :force => true do |t|
+    t.string "image_url"
   end
 
   create_table "images_projects", :id => false, :force => true do |t|
     t.integer "project_id"
     t.integer "image_id"
+  end
+
+  create_table "links", :id => false, :force => true do |t|
+    t.integer "id"
+    t.text    "project_link"
   end
 
   create_table "majors", :force => true do |t|
@@ -65,26 +99,29 @@ ActiveRecord::Schema.define(:version => 20110515200141) do
     t.integer "person_id"
   end
 
-  create_table "profile_images", :force => true do |t|
-    t.string "image_url"
-    t.string "thumb_url"
+  create_table "projects", :id => false, :force => true do |t|
+    t.integer "id"
+    t.text    "name"
+    t.integer "isCapstone"
+    t.text    "description"
+    t.text    "name_nav"
+    t.integer "isGroup"
+    t.text    "img"
   end
 
-  create_table "projects", :force => true do |t|
-    t.text   "description"
-    t.string "name"
-    t.string "thumb_url"
-    t.text   "nav_name"
+  create_table "projects_links", :id => false, :force => true do |t|
+    t.integer "link_id"
+    t.integer "project_id"
   end
 
-  create_table "videos", :force => true do |t|
-    t.string "name"
-    t.string "vimeonumber"
+  create_table "projects_videos", :id => false, :force => true do |t|
+    t.integer "video_id"
+    t.integer "project_id"
   end
 
-  create_table "videos_projects", :id => false, :force => true do |t|
-    t.integer "video_id_id"
-    t.integer "project_id_id"
+  create_table "videos", :id => false, :force => true do |t|
+    t.integer "id"
+    t.integer "vimeonumber"
   end
 
 end

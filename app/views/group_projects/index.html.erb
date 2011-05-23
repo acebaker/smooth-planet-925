@@ -1,32 +1,34 @@
-<div id="all" class="category">
+<div id="all" class="main">
 	<% @projects.each do |project| %>
-	<div id="<%= project.name.downcase.gsub(/ /,'_') %>" class="category">
-		<h2><%= project.name.html_safe %></h2>
-		<p><%= project.description.html_safe %></p>
+	<div id="<%= project.name.downcase.gsub(/ /,'_') %>" class="group_project project">
+		<h2 class="project_name"><%= project.name.html_safe %></h2>
+		<p class="project_text project_description"><%= project.description.html_safe %></p>
+		<div class="media">
+			<% project.videos.each do |video| %>
+			<div class="video">
+				<iframe src="http://player.vimeo.com/video/<%= video.vimeonumber %>?byline=0&amp;portrait=0&amp;color=ffffff" width="700" height="394" frameborder="0"></iframe>
+			</div><!-- end video -->
+			<% end %>
 		
-		<% project.videos.each do |video| %>
-		<div class="video">
-			<iframe src="http://player.vimeo.com/video/<%= video.vimeonumber %>?byline=0&amp;portrait=0&amp;color=ffffff" width="700" height="394" frameborder="0"></iframe>
-		</div>
-		<% end %>
 		
+			<% project.images.each do |image| %>
+				<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/large/#{image.image_url.html_safe}", :alt => image.image_url )%>
+			<% end %>
+		</div> <!-- end .media -->
 		
-		<% project.images.each do |image| %>
-			<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/large/#{image.image_url.html_safe}", :alt => image.image_url )%>
+		<p class="group_members">Collaborated with <%= d.people.count %>
+		<% d.people.sort! { |a,b| a.lname.downcase <=> b.lname.downcase }.each_with_index do |p, i| %>
+			<% if p.id != @person.id %>
+			<%= link_to "#{p.fname} #{p.lname}", person_path(p.id)  %>
+			
+				<% if i < d.people.count - 1 %>
+					<%= ', '%>
+				<% end %>
+			<% end %>
 		<% end %>
-		
-		<ul>
-		<% project.people.each do |p| %>
-			<li><%= link_to "#{p.fname} #{p.lname}", person_path(p.id)  %></li>
-		<% end %>
-		</ul>
-		<h4 class="see_more">See more projects in:</h4>
-		<ul>
-		<% project.categories.each do |category| %>
-			<li><%= link_to category.name + " Design", projects_path(:anchor => category.name.downcase) %></li>
-		<% end %>
-		</ul>
-		<h1>Project Id: <%= project.id %></h1>
+		</p>
+		<p class="see_more">See more projects in <% project.categories.each_with_index do |category, i| %><%= link_to category.name + " Design", projects_path(:anchor => category.name.downcase) %><% if i==0%><%= ', ' %><% else %><%= '.' %><% end %>
+		<% end %></p>
 	</div>
 	<% end %>
 	

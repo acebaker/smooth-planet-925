@@ -15,6 +15,8 @@
 a {
 	color: rgb(150,150,150);
 	text-decoration: none;
+	outline: 0;
+	font-size: 12px;
 }
 
 a:hover {
@@ -124,14 +126,6 @@ nav#subnav .prevnext {
 	height: 30px;
 }
 
-nav#subnav .prevnext a, nav#subnav .prevnext a:hover {
-	float:left;
-	width:40px;
-	text-decoration:none;
-	font-weight: normal;
-	font-size: 10px;
-}
-
 header nav#subnav {
 	position: fixed;
 	top: 160px;
@@ -139,8 +133,10 @@ header nav#subnav {
 	width: 130px;
 }
 
-nav#subnav .subnav-phrase, nav#subnav img {
-	margin-bottom: 30px;
+.see_more ul li{
+	display: inline;
+	font-size: 12px;
+	
 }
 
 header nav#subnav ul li {
@@ -170,6 +166,29 @@ header nav#subnav ul li:hover a {
 	border-top: 1px solid #fff700;
 	margin-top: 30px;
 	padding-top:10px;
+}
+
+.image img, .category img {
+	margin-bottom: 10px;
+	display: block;
+}
+
+.category p {
+	margin-bottom: 20px;
+}
+
+#subnav ul {
+	margin-top: 40px;
+}
+
+.icon_link img {
+	margin-right: 5px;
+	vertical-align: middle;
+	padding-bottom: 8px;
+}
+
+.see_more {
+	font-size: 12px;
 }
 
 #content {
@@ -206,7 +225,7 @@ header nav#subnav ul li:hover a {
 	padding-top: 237px;
 	padding-bottom: 10px;
 	border-bottom: 1px solid #fff700;
-	margin-bottom: -100px;
+	/*margin-bottom: -100px;*/
 }
 
 h2 {
@@ -264,8 +283,10 @@ h4.person_name:hover {
 	margin-top: 30px;
 }
 
-p.person_contact a {
+p.person_contact {
 	font-size:10px;
+	margin-bottom: 25px;
+	margin-top: 10px
 }
 
 #person_about {
@@ -364,21 +385,19 @@ img.arrow {
 	font-weight: bold;
 }
 
-.showfollow {
+.showfollow, #peoplenav {
 	font-size: 10px;
 	position: fixed;
 	bottom: 56px;
 	right: 50px;
 }
 
-.showfollow img {
-	vertical-align: middle;
 
-}
 
 .showfollow h5 {
 	text-transform: uppercase;
 	font-weight: bold;
+	margin-bottom: 8px;
 
 }
 
@@ -455,13 +474,13 @@ img.arrow {
 	height: 50%;
 }
 
-#bottom a {
+#bottom a, p.person_contact a {
 	font-size: 10px;
 }
 
 .alert {
 	width:650px;
-	height: 15px;
+	height: auto;
 	padding: 20px;
 	margin-bottom:20px;
 	background-color: red;

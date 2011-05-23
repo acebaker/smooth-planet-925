@@ -34,11 +34,13 @@
 				<%= yield %>
 				
 				<div id="bottom">
+					<div class='icon_link'>
 					<% if defined?(@person) %>
 					<a href='#person_about' class="scroll">Back to Top</a>
 					<% else %>
 					<a href='#all' class="scroll">Back to Top</a>
 					<% end %>
+					</div> <!-- end .icon_link -->
 				</div> <!-- end #bottom -->
 			</div> <!-- end #content -->
 		</div> <!-- end #container -->

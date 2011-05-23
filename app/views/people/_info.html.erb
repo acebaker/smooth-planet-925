@@ -1,6 +1,8 @@
+<div id="peoplenav">
+	<div class='icon_link'><%= link_to image_tag("/images/general/back.png", :alt => "Previous Person", :title => "Previous Person"), "/people/#{@previous.id}", :class => "prevnext" %></div>
+	<div class='icon_link'><%= link_to image_tag("/images/general/forward.png", :alt => "Next Person", :title => "Next Person"), "/people/#{@next.id}", :class => "prevnext" %></div>
+</div>
 <div id="person_info">
-		<%= link_to "Previous", "/people/#{@previous.id}", :class => "prevnext" %>
-		<%= link_to "Next", "/people/#{@next.id}", :class => "prevnext" %>
 	<h2 id="person_name"><%= @person.fname.html_safe %><br /><%= @person.lname.html_safe %></h2>
 	<div id="person_image">
 		<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/people/profiles/Profile_#{@person.fname.html_safe + @person.lname.html_safe}.jpg", :mouseover => "https://s3.amazonaws.com/uwdesign2011/images/content/people/rollover/Profile_#{@person.fname.html_safe + @person.lname.html_safe}_2.jpg", :alt => @person.lname.html_safe, :width => "130px" )%>
