@@ -22,15 +22,18 @@
 	<nav class="person_projects">
 		<ul>
 		<% @person.projects.each do |project| %>
-		<li><a href='/#<%= project.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,'').gsub(/;/,'').gsub(/&/,'').gsub(/,/,'') %>' class="scroll">
-			<% if project.nav_name.nil? %>
+		
+		<% if project.isCapstone != 1 %>
+		<a href='/#<%= project.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,'').gsub(/;/,'').gsub(/&/,'').gsub(/,/,'') %>' class="scroll">
+			<li><% if project.nav_name.nil? %>
 				<%= project.name.html_safe %>
 				
 			<% else %>
 				<%= project.nav_name.gsub(/,/,"<br />").html_safe %>
 				
 			<% end %>
-		</a></li>
+			</li></a>
+		<% end %>
 		<% end %>
 
 		</ul>

@@ -10,14 +10,16 @@
 		</ul>
 	</nav>
 	<nav id="subnav">
+		
+		
+		<% if defined?(@person).nil? %>
+		<div class="side_img">
 		<% if defined?(@sub_image).nil? %>
 			<%= print "var is not defined\n" %>
 		<% else %>
 			<%= image_tag("general/#{@sub_image}.png", :alt => @sub_image ) %>
 		<% end %>
-		
-		
-		<% if defined?(@person).nil? %>
+		</div>
 		<% else %>
 		<%= render 'people/info'%>
 		<% end %>
@@ -31,20 +33,20 @@
 				<% if defined?(@group) %>
 				
 				<% else %>
-				<li><a href='#all' class="scroll">All</a></li>
+				<a href='#all' class="scroll"><li>All</li></a>
 				<% end %>
 				
 				
 				<% @navs.each do |nav| %>
-				<li><a href='/#<%= nav.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,'').gsub(/;/,'').gsub(/&/,'').gsub(/,/,'') %>' class="scroll">
-					<% if nav.nav_name.nil? %>
+				<a href='/#<%= nav.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,'').gsub(/;/,'').gsub(/&/,'').gsub(/,/,'') %>' class="scroll">
+					<li><% if nav.nav_name.nil? %>
 						<%= nav.name.html_safe %>
 						
 					<% else %>
 						<%= nav.nav_name.gsub(/,/,"<br />").html_safe %>
 						
 					<% end %>
-				</a></li>
+				</li></a>
 				<% end %>
 			</ul>
 		<% end %>
@@ -53,7 +55,7 @@
 			<%= print "var is not defined\n" %>
 		<% else %>
 			<ul id="third_nav">
-				<li><%= link_to 'Group Projects', "/group_projects" %></li>
+				<%= link_to '<li>Group Projects</li>'.html_safe, "/group_projects" %>
 			</ul>
 		<% end %>
 		
