@@ -169,6 +169,7 @@ nav#subnav ul li:hover a {
 
 .media img {
 	margin-bottom: 10px;
+	display: block;
 }
 
 .category p {
@@ -189,6 +190,7 @@ nav#subnav ul li:hover a {
 
 .see_more {
 	font-size: 12px;
+	margin-top: 10px;
 }
 
 #content {

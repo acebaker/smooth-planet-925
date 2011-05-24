@@ -1,5 +1,5 @@
-<nav id="peoplenav">
-	<p>Change Student</p>
+<nav id="peoplenav" class="showfollow">
+	<h5>Change Student</h5>
 	<%= link_to image_tag("/images/general/back.png", :alt => "Previous Person", :title => "Previous Person"), "/people/#{@previous.id}", :class => "prevnext icon_link" %>
 	<%= link_to image_tag("/images/general/forward.png", :alt => "Next Person", :title => "Next Person"), "/people/#{@next.id}", :class => "prevnext icon_link" %>
 </nav>
