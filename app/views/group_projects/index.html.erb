@@ -16,7 +16,7 @@
 			<% end %>
 		</div> <!-- end .media -->
 		
-		<p class="group_members">In collaboration with <%= project.people.count %>
+		<p class="group_members project_text">In collaboration with 
 		<% project.people.sort! { |a,b| a.lname.downcase <=> b.lname.downcase }.each_with_index do |p, i| %>
 			<%= link_to "#{p.fname} #{p.lname}", person_path(p.id)  %>
 			
@@ -25,7 +25,7 @@
 				<% end %>
 		<% end %>
 		</p>
-		<p class="see_more">See more projects in <% project.categories.each_with_index do |category, i| %><%= link_to category.name + " Design", projects_path(:anchor => category.name.downcase) %><% if i==0%><%= ', ' %><% else %><%= '.' %><% end %>
+		<p class="see_more project_text">See more projects in <% project.categories.each_with_index do |category, i| %><%= link_to category.name + " Design", projects_path(:anchor => category.name.downcase) %><% if i==0%><%= ', ' %><% else %><%= '.' %><% end %>
 		<% end %></p>
 	</div>
 	<% end %>
