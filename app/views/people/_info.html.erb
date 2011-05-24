@@ -1,4 +1,5 @@
 <nav id="peoplenav">
+	<p>Change Student</p>
 	<%= link_to image_tag("/images/general/back.png", :alt => "Previous Person", :title => "Previous Person"), "/people/#{@previous.id}", :class => "prevnext icon_link" %>
 	<%= link_to image_tag("/images/general/forward.png", :alt => "Next Person", :title => "Next Person"), "/people/#{@next.id}", :class => "prevnext icon_link" %>
 </nav>
@@ -21,8 +22,17 @@
 	<nav class="person_projects">
 		<ul>
 		<% @person.projects.each do |project| %>
-			<li><%= link_to project.name.html_safe, '#' + project.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,''), :class => 'scroll' %></li>
+		<li><a href='/#<%= project.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,'').gsub(/;/,'').gsub(/&/,'').gsub(/,/,'') %>' class="scroll">
+			<% if project.nav_name.nil? %>
+				<%= project.name.html_safe %>
+				
+			<% else %>
+				<%= project.nav_name.gsub(/,/,"<br />").html_safe %>
+				
+			<% end %>
+		</a></li>
 		<% end %>
+
 		</ul>
 	</nav>
 </div> <!-- end #person_info -->

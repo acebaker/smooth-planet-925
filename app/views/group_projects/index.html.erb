@@ -1,6 +1,6 @@
 <div id="all" class="main">
 	<% @projects.each do |project| %>
-	<div id="<%= project.name.downcase.gsub(/ /,'_') %>" class="group_project project">
+	<div id="<%= project.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,'').gsub(/;/,'').gsub(/&/,'').gsub(/,/,'') %>" class="group_project project">
 		<h2 class="project_name"><%= project.name.html_safe %></h2>
 		<p class="project_text project_description"><%= project.description.html_safe %></p>
 		<div class="media">
@@ -16,7 +16,7 @@
 			<% end %>
 		</div> <!-- end .media -->
 		
-		<p class="group_members">Collaborated with <%= project.people.count %>
+		<p class="group_members">In collaboration with <%= project.people.count %>
 		<% project.people.sort! { |a,b| a.lname.downcase <=> b.lname.downcase }.each_with_index do |p, i| %>
 			<%= link_to "#{p.fname} #{p.lname}", person_path(p.id)  %>
 			

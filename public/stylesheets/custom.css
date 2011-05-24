@@ -214,7 +214,7 @@ header nav#subnav ul li:hover a {
 	font-size: .7em;
 }
 
-.category, .project {
+.category, .project, .major {
 	clear: both;
 	display: block;
 	padding-top: 237px;
@@ -296,7 +296,7 @@ p.person_contact {
 	line-height: 1.3em;
 }
 
-.description {
+.project_text {
 	font-size: 11px;
 	line-height: 14px;
 	width: 560px;

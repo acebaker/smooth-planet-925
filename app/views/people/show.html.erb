@@ -1,7 +1,7 @@
 <p id="person_about"><%= @person.about.html_safe %></p>
 
 <% @person.projects.each do |project| %>
-	<div id="<%= project.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,'') %>" class="project">
+	<div id="<%= project.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,'').gsub(/;/,'').gsub(/&/,'').gsub(/,/,'') %>" class="project">
 		<h2 class="project_name"><%= project.name.html_safe %></h2>
 		
 		<% if project.isGroup == 1 %>
@@ -13,15 +13,15 @@
 		<p class="project_text project_description"><%= project.description.html_safe %></p>
 		
 		<div class="media">
-			<% project.videos.each do |video| %>
+		<% if project.isGroup == 1 %>
+			
+			<% project.group_projects.each do |d| %>
+			
+			<% d.videos.each do |video| %>
 			<div class="video">
 				<iframe src="http://player.vimeo.com/video/<%= video.vimeonumber %>?byline=0&amp;portrait=0&amp;color=ffffff" width="700" height="394" frameborder="0"></iframe>
 			</div> <!-- end .video -->
 			<% end %>
-			
-			
-		<% if project.isGroup == 1 %>
-			<% project.group_projects.each do |d| %>
 			
 			<% d.images.each do |i| %>
 				<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/large/#{i.image_url}", :alt => i.image_url )%>
@@ -40,6 +40,12 @@
 			</p>
 			<% end %>
 		<% else %>
+			<% project.videos.each do |video| %>
+			<div class="video">
+				<iframe src="http://player.vimeo.com/video/<%= video.vimeonumber %>?byline=0&amp;portrait=0&amp;color=ffffff" width="700" height="394" frameborder="0"></iframe>
+			</div> <!-- end .video -->
+			<% end %>
+		
 			<% project.images.each do |image| %>
 				<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/large/#{image.image_url}", :alt => image.image_url )%>
 			<% end %>
