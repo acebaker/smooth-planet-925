@@ -1,7 +1,7 @@
 class GroupProjectsController < ApplicationController
   def index
     @projects = GroupProject.all.sort! { |a,b| a.name.downcase <=> b.name.downcase }
-    @navs = GroupProject.all.sort! { |a,b| a.name.downcase <=> b.name.downcase }
+    #@navs = GroupProject.all.sort! { |a,b| a.name.downcase <=> b.name.downcase }
     
     @group = 1
     

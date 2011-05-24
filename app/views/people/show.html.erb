@@ -53,6 +53,15 @@
 			<% end %>
 		<% end %>
 		</div> <!-- end .media -->
+		
+		<div class="social">
+			<iframe src="http://www.facebook.com/plugins/like.php?app_id=131157443624950&amp;href=http%3A%2F%2Fuwdesign2011.com%2Fpeople%2F<%= @person.id %>%23<%= project.name.downcase.gsub(/ /,'_') %>&amp;send=false&amp;layout=button_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:21px;" allowTransparency="true"></iframe>
+
+			<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fuwdesign2011.com%2Fpeople%2F<%= @person.id %>%23<%= project.name.downcase.gsub(/ /,'_') %>&title=<%= project.name %>" ><img title="StumbleUpon : <%= project.name %> : http://uwdesign2011.com<%= person_path(@person, :anchor => project.name.downcase.gsub(/ /,'_')) %>" src="../images/general/stumble.gif" alt="Add to StumbleUpon" /></a>
+
+			<a href="http://twitter.com/home?status=http%3A%2F%2Fuwdesign2011.com%2Fpeople%2F<%= @person.id %>%23<%= project.name.downcase.gsub(/ /,'_') %>" ><img title="Twitter : <%= project.name %> : http://uwdesign2011.com<%= person_path(@person, :anchor => project.name.downcase.gsub(/ /,'_')) %>" src="../images/general/twitter.gif" alt="Add to Twitter" /></a>
+		</div>
+		
 
 		<p class="see_more">See more projects in <% project.categories.each_with_index do |category, i| %><%= link_to category.name + " Design", projects_path(:anchor => category.name.downcase) %><% if i==0%><%= ', ' %><% else %><%= '.' %><% end %>
 		<% end %></p>
