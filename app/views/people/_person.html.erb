@@ -1,5 +1,5 @@
 	<div class="person">
-		<%= link_to image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/people/thumbnails/Thumb_#{person.fname.html_safe + person.lname.html_safe}.jpg", :height => "120px", :alt => person.fname.html_safe + person.lname.html_safe ), person %>
+		<%= link_to image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/people/thumbnails/Thumb_#{person.fname.html_safe + person.lname.html_safe}.jpg", :height => "120", :alt => person.fname.html_safe + person.lname.html_safe ), person %>
 		<h4 class="person_name"><%= link_to person.fname.html_safe + " " + person.lname.html_safe, person %></h4>
 	</div>
 
