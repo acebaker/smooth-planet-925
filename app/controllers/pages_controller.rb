@@ -7,6 +7,7 @@ class PagesController < ApplicationController
     @navs = Category.all.sort! { |a,b| a.name.downcase <=> b.name.downcase }
     @navs2 = "yes"
     @sub_image = "here_is_images-work"
+    @splash = 1
   	
   	@active_nav = "work"
   	

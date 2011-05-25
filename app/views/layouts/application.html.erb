@@ -26,6 +26,21 @@
 	<body>
 		<div id="container" class="yui3-widget yui3-scrollview yui3-scrollview-vert">
 			<%= render 'layouts/header' %>
+			<% if @splash == 1 %>
+			
+			<!-- Stuff for Splash -->
+			<div id="splash">
+			  	<div id="splash-info">
+				  	<div id="splash-imgs">
+					  	<img src="images/general/LandingPageCircle_02.png" alt="You are in the right place."/>
+				  		<img src="images/general/LandingPageCircle_01.png" alt="You are in the right place."/>
+				  	</div>
+				</div>
+				<div id="splash-info-hide"></div>
+			</div>
+			
+			<% end %>
+			
 			<div id="content" class="yui3-scrollview-loading">
 				
 				<%= yield %>
