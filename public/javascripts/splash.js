@@ -14,13 +14,13 @@ $(document).ready(function(){
 		$(splashImgs[0]).css('display', 'none'); 
 		
 		//start fading out first image after .9 seconds (from page load)
-		$(splashImgs[1]).delay(900).fadeOut(200);
+		$(splashImgs[1]).delay(1500).fadeOut(200);
 		
 		//start fading in second image after .7 seconds (from page load)
-		$(splashImgs[0]).delay(700).fadeIn(300); 
+		$(splashImgs[0]).delay(1700).fadeIn(300); 
 		
 		//start fading out second image after 1.5 seconds (from page load)
-		$(splashImgs[0]).delay(1500).fadeOut('slow', hideSplash);
+		$(splashImgs[0]).delay(2000).fadeOut('slow', hideSplash);
 		
 		// On click of white opaque layer hide the splash immediately								
 		$('#splash-info-hide').click(function(event) {
