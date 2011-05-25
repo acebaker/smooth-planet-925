@@ -3,6 +3,8 @@ class PeopleController < ApplicationController
     @title = "People"
     @people = Person.all.sort!{ |a,b| a.lname.downcase <=> b.lname.downcase }
     @navs = Major.all.sort! { |a,b| a.name.downcase <=> b.name.downcase }
+    @sub_image = "here_is_images-people"
+    @everyone = 1
     
     @ds  = Major.find_by_name('Design Studies').people.sort! { |a,b| a.lname.downcase <=> b.lname.downcase }
     @id  = Major.find_by_name('Industrial Design').people.sort! { |a,b| a.lname.downcase <=> b.lname.downcase }

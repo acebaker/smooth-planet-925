@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
     @projects = @solo_projects + @group_projects
     @navs = Category.all.sort! { |a,b| a.name.downcase <=> b.name.downcase }
     @navs2 = "yes"
-    @sub_image = "BestWorkPhrase"
+    @sub_image = "here_is_images-work"
   	
   	@active_nav = "work"
   	

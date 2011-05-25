@@ -7,11 +7,8 @@
 	  	<title><%= title %></title>
 		<%= render 'layouts/stylesheets' %>
 		<%= javascript_include_tag :all %>
-		
-
 		<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		
 		<![endif]-->
 		<%= render 'layouts/analytics' %>
 		<%= csrf_meta_tag %>
@@ -46,29 +43,6 @@
 		</div> <!-- end #container -->
 	</body>
 	
-<!-- lazy goes here -->
-	
 	<% if is_mobile? %>
-	<script src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"
-	    charset="utf-8"></script>
-	
-	
-	<script type="text/javascript">
-		YUI().use('scrollview-base', function(Y) {
-
-		    var scrollView = new Y.ScrollView({
-		        id:"scrollview",
-		        srcNode: '#content',
-		        height: 1000,
-		        flick: {
-		            minDistance:10,
-		            minVelocity:0.3,
-		            axis: "y"
-		        }
-		    });
-
-		    scrollView.render();
-		})
-	</script>
 	<% end %>
 </html>

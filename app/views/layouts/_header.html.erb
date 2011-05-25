@@ -1,6 +1,6 @@
 <header>
 	<div class="hack"></div>
-	<%= link_to logo, projects_path %></h1>
+	<%= link_to logo, projects_path %>
 	<nav id="main">
 		<ul>
 			<li><%= link_to "Work", projects_path, :id => "work" %></li>
@@ -8,18 +8,16 @@
 			<li><%= link_to "Show Info", show_information_path, :id => "show_info" %></li>
 			<li><%= link_to "About UW Design", about_uw_design_path, :id => "about_uw_design" %></li>
 		</ul>
-	</nav>
+	</nav> <!-- end #main -->
 	<nav id="subnav">
-		
-		
 		<% if defined?(@person).nil? %>
 		<div class="side_img">
-		<% if defined?(@sub_image).nil? %>
-			<%= print "var is not defined\n" %>
-		<% else %>
-			<%= image_tag("general/#{@sub_image}.png", :alt => @sub_image ) %>
-		<% end %>
-		</div>
+			<% if defined?(@sub_image).nil? %>
+				<%= print "var is not defined\n" %>
+			<% else %>
+				<%= image_tag("general/#{@sub_image}.png", :alt => @sub_image ) %>
+			<% end %>
+		</div> <!-- end .side_img -->
 		<% else %>
 		<%= render 'people/info'%>
 		<% end %>
@@ -32,12 +30,22 @@
 				
 				<% if defined?(@group) %>
 				
+					<% @navs.each do |nav| %>
+					<a href='/people/<%= nav.id %>'>
+						<li><%= nav.fname + ' ' + nav.lname %></li>
+					</a>
+					<% end %>
+				
 				<% else %>
-				<a href='#all' class="scroll"><li>All</li></a>
-				<% end %>
 				
-				
+					<% if defined?(@everyone) %>
+					<a href='#everyone' class="scroll"><li>Everyone</li></a>
+					<% else %>
+					<a href='#all' class="scroll"><li>All</li></a>
+					<% end %>
+					
 				<% @navs.each do |nav| %>
+				<% if nav.name != "Packaging" %>
 				<a href='/#<%= nav.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,'').gsub(/;/,'').gsub(/&/,'').gsub(/,/,'') %>' class="scroll">
 					<li><% if nav.nav_name.nil? %>
 						<%= nav.name.html_safe %>
@@ -48,16 +56,13 @@
 					<% end %>
 				</li></a>
 				<% end %>
+				<% end %>
+				<% end %>
+				
+				
+				
 			</ul>
 		<% end %>
 		
-		<% if defined?(@navs2).nil? %>
-			<%= print "var is not defined\n" %>
-		<% else %>
-			<ul id="third_nav">
-				<%= link_to '<li>Group Projects</li>'.html_safe, "/group_projects" %>
-			</ul>
-		<% end %>
-		
-	</nav><!-- end #categories -->
+	</nav><!-- end #subnav -->
 </header>

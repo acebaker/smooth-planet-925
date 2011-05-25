@@ -13,4 +13,18 @@ class GroupProjectsController < ApplicationController
       format.xml  { render :xml => @projects }
     end
   end
+  
+  def show
+    @project = GroupProject.find(params[:id])
+    @group = 1
+    @navs = GroupProject.find(params[:id]).people
+    @sub_image = "here_is_images-group"
+    
+    @active_nav = "work"
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @projects }
+    end
+  end
 end

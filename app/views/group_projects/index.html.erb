@@ -1,34 +1,5 @@
-<div id="all" class="main">
-	<% @projects.each do |project| %>
-	<div id="<%= project.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,'').gsub(/;/,'').gsub(/&/,'').gsub(/,/,'') %>" class="group_project project">
-		<h2 class="project_name"><%= project.name.html_safe %></h2>
-		<p class="project_text project_description"><%= project.description.html_safe %></p>
-		<div class="media">
-			<% project.videos.each do |video| %>
-			<div class="video">
-				<iframe src="http://player.vimeo.com/video/<%= video.vimeonumber %>?byline=0&amp;portrait=0&amp;color=ffffff" width="700" height="394" frameborder="0"></iframe>
-			</div><!-- end video -->
-			<% end %>
-		
-		
-			<% project.images.each do |image| %>
-				<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/large/#{image.image_url.html_safe}", :alt => image.image_url )%>
-			<% end %>
-		</div> <!-- end .media -->
-		
-		<p class="group_members project_text">In collaboration with 
-		<% project.people.sort! { |a,b| a.lname.downcase <=> b.lname.downcase }.each_with_index do |p, i| %>
-			<%= link_to "#{p.fname} #{p.lname}", person_path(p.id)  %>
-			
-				<% if i < project.people.count - 1 %>
-					<%= ', '%>
-				<% end %>
-		<% end %>
-		</p>
-		<p class="see_more project_text">See more projects in <% project.categories.each_with_index do |category, i| %><%= link_to category.name + " Design", projects_path(:anchor => category.name.downcase) %><% if i==0%><%= ', ' %><% else %><%= '.' %><% end %>
-		<% end %></p>
-	</div>
-	<% end %>
+<div id="all" class="category">
+	<%= render @projects %>
 	
 	<div class="clear"></div>
 </div> <!-- end #all -->

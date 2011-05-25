@@ -1,0 +1,37 @@
+<div id="<%= @project.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,'').gsub(/;/,'').gsub(/&/,'').gsub(/,/,'') %>" class="project">
+	<h2 class="project_name"><%= @project.name.html_safe %></h2>
+	
+	<p class="project_text project_description"><%= @project.description.html_safe %></p>
+	
+	<div class="media">
+		
+		<% @project.videos.each do |video| %>
+		<div class="video">
+			<iframe src="http://player.vimeo.com/video/<%= video.vimeonumber %>?byline=0&amp;portrait=0&amp;color=ffffff" width="700" height="394" frameborder="0"></iframe>
+		</div> <!-- end .video -->
+		<% end %>
+		
+		<% @project.images.each do |i| %>
+			<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/large/#{i.image_url}", :alt => i.image_url )%>
+		<% end %>
+	
+	</div> <!-- end .media -->
+	
+	<div class="social">
+		<iframe src="http://www.facebook.com/plugins/like.php?app_id=131157443624950&amp;href=http%3A%2F%2Fuwdesign2011.com%2Fgroup_projects%2F<%= @project.id %>&amp;send=false&amp;layout=button_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:21px;" allowTransparency="true"></iframe>
+	</div> <!-- end .social -->
+	
+
+	<p class="see_more project_text">See more projects in
+	<% @project.categories.each_with_index do |category, i| %>
+		<%= link_to category.name + " Design", projects_path(:anchor => category.name.downcase) %>
+		<% if i==0%>
+			<%= ', ' %>
+		<% else %>
+			<%= '.' %>
+		<% end %>
+	<% end %></p>
+	<div class="clear"></div>
+</div> <!-- end #<%= @project.name.downcase.gsub(/ /,'_') %> -->
+<div id="projects_end"></div>
+<div class="clear"></div>
