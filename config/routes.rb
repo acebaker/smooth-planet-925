@@ -9,6 +9,7 @@ UwTest::Application.routes.draw do
   
   match '/about_uw_design', :to => 'pages#about_uw_design'
   match '/show_information', :to => 'pages#show_information'
+  match '/home', :to => 'pages#home'
   
   match '/group_projects', :to => 'projects#group_projects'
 

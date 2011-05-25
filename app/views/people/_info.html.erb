@@ -5,16 +5,16 @@
 </nav>
 <div id="person_info">
 	<h2 id="person_name"><%= @person.fname.html_safe %><br /><%= @person.lname.html_safe %></h2>
-		<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/people/profiles/Profile_#{@person.fname.html_safe + @person.lname.html_safe}.jpg", :mouseover => "https://s3.amazonaws.com/uwdesign2011/images/content/people/rollover/Profile_#{@person.fname.html_safe + @person.lname.html_safe}_2.jpg", :alt => @person.lname.html_safe, :width => "130px", :class => "person_image" )%>
+		<a href='#person_about' class="scroll"><%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/people/profiles/Profile_#{@person.fname.html_safe + @person.lname.html_safe}.jpg", :mouseover => "https://s3.amazonaws.com/uwdesign2011/images/content/people/rollover/Profile_#{@person.fname.html_safe + @person.lname.html_safe}_2.jpg", :alt => @person.lname.html_safe, :width => "130px", :class => "person_image" )%></a>
 	
 	<% if @person.contact.include?("@") %>
 		<% jtext = "Contact Info" %>
 		<% jlink = "mailto:" + @person.contact.html_safe %>
 	<% elsif @person.contact.include?("http://") %>
-		<% jtext = "Portfolio" %>
+		<% jtext = "View Portfolio" %>
 		<% jlink = @person.contact.html_safe %>
 	<% else %>
-		<% jtext = "Portfolio" %>
+		<% jtext = "View Portfolio" %>
 		<% jlink = "http://" + @person.contact.html_safe %>
 	<% end %>
 	<p class="person_contact"><%= link_to jtext, jlink %></p>

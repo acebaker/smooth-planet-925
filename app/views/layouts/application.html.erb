@@ -34,6 +34,8 @@
 					<div class='icon_link'>
 					<% if defined?(@person) %>
 					<a href='#person_about' class="scroll"><img src='/images/general/BackToTop.png' alt='Back To Top' />Back to Top</a>
+					<% elsif defined?(@everyone) %>
+					<a href='#everyone' class="scroll"><img src='/images/general/BackToTop.png' alt='Back To Top' />Back to Top</a>
 					<% else %>
 					<a href='#all' class="scroll"><img src='/images/general/BackToTop.png' alt='Back To Top' />Back to Top</a>
 					<% end %>

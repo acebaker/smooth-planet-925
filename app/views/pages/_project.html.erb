@@ -1,0 +1,8 @@
+<% if project.isCapstone != 1 && project.isGroup != 1 %>
+	<div class="work">
+		<% project.people.each do |person| %>
+			<% @pageuri = person.id %>
+		<% end %>
+		<%= link_to image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/thumbnails/#{project.img}", :height => "120"), 'people/' + @pageuri.to_s + '#' + project.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,'').gsub(/;/,'').gsub(/&/,'').gsub(/,/,'') %>
+	</div> <!-- end .work -->
+<% end %>

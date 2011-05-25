@@ -45,7 +45,7 @@
 					<% end %>
 					
 				<% @navs.each do |nav| %>
-				<% if nav.name != "Packaging" %>
+				<% if nav.name != "Packaging" && nav.name != "Web" %>
 				<a href='/#<%= nav.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,'').gsub(/;/,'').gsub(/&/,'').gsub(/,/,'') %>' class="scroll">
 					<li><% if nav.nav_name.nil? %>
 						<%= nav.name.html_safe %>

@@ -1,4 +1,4 @@
-<div id="<%= @project.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,'').gsub(/;/,'').gsub(/&/,'').gsub(/,/,'') %>" class="project">
+<div id="all" class="project">
 	<h2 class="project_name"><%= @project.name.html_safe %></h2>
 	
 	<p class="project_text project_description"><%= @project.description.html_safe %></p>

@@ -247,8 +247,8 @@ h2 {
 
 h2#person_name {
 	font-size: 14px;
-	padding-top: 7px;
-	padding-bottom: 6px;
+	padding-top: 10px;
+	margin-bottom: 10px;
 	border-top: 1px solid #fff700;
 }
 
@@ -272,8 +272,10 @@ h4.person_name li a {
 
 p.person_contact {
 	font-size:10px;
+	margin-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #fff700;
 	margin-bottom: 25px;
-	margin-top: 10px
 }
 
 #person_about {
@@ -295,6 +297,11 @@ p.person_contact {
 	margin-bottom: 20px;
 }
 
+.group_members {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
 h3.subhead {
 	padding-top: 160px;
 	font-size: 2em;
@@ -312,20 +319,20 @@ h2.focalpoint {
 	border-bottom: 1px solid #fff700;
 }
 
-img#theshowtitles {
-position:absolute;
+img.theshowtitles {
+	position:absolute;
 }
 
-img#theshowline{
-margin-bottom:60px;
+.theshowline{
+	margin-bottom:60px;
 }
 
 img#seeyou{
-position:fixed;
-left: 54px;
+	position:fixed;
+	left: 54px;
 }
 
-#show_info {
+.show_information {
 	padding-top: 238px;
 }
 
@@ -376,7 +383,7 @@ img.arrow {
 	font-size: 10px;
 	position: fixed;
 	bottom: 56px;
-	right: 50px;
+	left: 36px;
 }
 
 
@@ -431,28 +438,36 @@ img.arrow {
 	float:left;
 }
 
-.facultyinfo #profiles{
+.profiles{
 	font-family:helvetica, arial, verdana;
-	padding-left: 40px;
-	float:left;
 	font-size: 10px;
+	display: block;
+	clear: both;
+	margin-bottom: 60px;
+	float: left;
+}
+.profiles_text {
 	width: 300px;
+	float: left;
 }
 
-.facultyinfo #profiles .titles{
+.profiles img {
+	float: left;
+	margin-right:40px;
+	width: 220px;
+	height: 150px;
+}
+
+.facultyinfo .profiles .titles{
 	text-transform:uppercase;
 }
 
-#profiles h5 {
+.profiles h5 {
 	font-size:13px;
 	text-transform: uppercase;
 	font-weight:bold;
 	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-	padding-bottom: 4px;
-
-}
-#projects_end {
-	height:400px;
+	padding-bottom: 4px
 }
 
 #bottom {
@@ -461,10 +476,6 @@ img.arrow {
 	margin-top: 30px;
 	margin-bottom: 20px;
 	height: 50%;
-}
-
-#bottom a, p.person_contact a {
-	font-size: 10px;
 }
 
 .alert {
@@ -495,4 +506,35 @@ img.arrow {
 
 .yui3-js-enabled .yui3-scrollview-loading {
     visibility:hidden;
+}
+#splash-info{
+	top: 20%;
+	position: fixed;
+	width: 100%;
+	height: 100%;	
+	z-index: 9; /*layered directly above click and hide layer with transparency*/
+}
+
+#splash-imgs {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+#splash-imgs img {
+	position: absolute;
+}
+
+#splash-info-hide {
+	position: fixed;
+	width: 100%;	
+	height: 100%;
+	background: rgba(255,255,255,.65);
+	z-index: 8; /*layered behind subnav*/
+}
+
+.fix-work {
+	position: fixed;
+	/*width:100%;*/
+	z-index: 0; /*layered on the bottom*/
 }

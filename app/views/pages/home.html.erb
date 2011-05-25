@@ -1,2 +1,76 @@
-<h1>UW Design Show 2011</h1>
-<p>Woooooo</p>
+<!-- Stuff for Splash -->
+<div id="splash">
+  	<div id="splash-info">
+	  	<div id="splash-imgs">
+		  	<img src="images/general/LandingPageCircle_02.png" alt="You are in the right place."/>
+	  		<img src="images/general/LandingPageCircle_01.png" alt="You are in the right place."/>
+	  	</div>
+	</div>
+	<div id="splash-info-hide"></div>
+</div>
+
+
+<div id="all" class="category">
+	<%= render @projects.shuffle %>
+	
+	<div class="clear"></div>
+</div> <!-- end #all -->
+
+<div id="brand" class="category"><h2>Brand Design</h2>
+	<% @brand.each do |project| %>
+		<%= render project %>
+	<% end %>
+	<div class="clear"></div>
+</div> <!-- end #brand -->
+
+<div id="exhibition" class="category"><h2>Exhibition Design</h2>
+	<% @exhibition.each do |project| %>
+		<%= render project %>
+	<% end %>
+	<div class="clear"></div>
+</div> <!-- end exhibition -->
+
+<div id="information" class="category"><h2>Information Design</h2>
+	<% @information.each do |project| %>
+		<%= render project %>
+	<% end %>
+	<div class="clear"></div>
+</div> <!-- end #information -->
+
+<div id="interaction" class="category"><h2>Interaction Design</h2>
+	<% @interaction.each do |project| %>
+		<%= render project %>
+	<% end %>
+	<div class="clear"></div>
+</div> <!-- end #interaction -->
+
+<div id="motion" class="category"><h2>Motion Design</h2>
+	<% @motion.each do |project| %>
+		<%= render project %>
+	<% end %>
+	<div class="clear"></div>
+</div> <!-- end #motion -->
+
+<div id="print" class="category"><h2>Print Design</h2>
+	<% @print.each do |project| %>
+		<%= render project %>
+	<% end %>
+	<div class="clear"></div>
+</div> <!-- end #print -->
+
+<div id="product" class="category"><h2>Product Design</h2>
+	<% @product.each do |project| %>
+		<%= render project %>
+	<% end %>
+	<div class="clear"></div>
+</div> <!-- end #product -->
+
+<div id="service" class="category"><h2>Service Design</h2>
+	<% @service.each do |project| %>
+		<%= render project %>
+	<% end %>
+	<div class="clear"></div>
+</div> <!-- end #service -->
+	
+<div id="projects_end"></div>
+<div class="clear"></div>
