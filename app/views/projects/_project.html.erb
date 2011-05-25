@@ -2,7 +2,7 @@
 	<div class="work">
 		<% if project.id >= 500 %>
 		
-			<%= link_to image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/thumbnails/#{project.img}", :height => 120px), 'group_projects#' + project.name.downcase.gsub(/ /,'_') %>
+			<%= link_to image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/thumbnails/#{project.img}", :height => "120px"), 'group_projects#' + project.name.downcase.gsub(/ /,'_') %>
 		<% else %>
 			<% project.people.each do |person| %>
 				<% @pageuri = person.id %>
