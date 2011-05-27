@@ -1,0 +1,5 @@
+<% if project.isGroup == 1 %>
+	<p class="alert group">Is group! Project ID: <%= project.group_projects.each do |p| p.group_project_id end %></p>
+<% else %>
+	<p class="alert">Isn't group! Project ID: <%= project.id %></p>
+<% end %>
