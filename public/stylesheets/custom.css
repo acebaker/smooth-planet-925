@@ -209,11 +209,11 @@ nav#subnav ul li:hover a {
 	position: relative;
 }
 
-.work:hover img {
+.work:hover img, .person:hover img {
 	border-bottom: 2px solid black;
 	margin-bottom: -2px;
 }
-.work:hover a {
+.work:hover a, .person:hover a {
 	color: black;
 }
 
