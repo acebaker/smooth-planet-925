@@ -13,47 +13,48 @@
 			
 			<% project.group_projects.each do |d| %>
 			
-			<% d.videos.each do |video| %>
-			<div class="video">
-				<iframe src="http://player.vimeo.com/video/<%= video.vimeonumber %>?byline=0&amp;portrait=0&amp;color=ffffff" width="700" height="394" frameborder="0"></iframe>
-			</div> <!-- end .video -->
-			<% end %>
+				<% d.videos.each do |video| %>
+				<div class="video">
+					<iframe src="http://player.vimeo.com/video/<%= video.vimeonumber %>?byline=0&amp;portrait=0&amp;color=ffffff" width="700" height="394" frameborder="0"></iframe>
+				</div> <!-- end .video -->
+				<% end %>
 			
-			<% d.images.each do |i| %>
-				<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/large/#{i.image_url}", :alt => i.image_url )%>
-			<% end %>
+				<% d.images.each do |i| %>
+					<%= image_tag("https://s3.amazonaws.com/uwdesign2011/images/content/projects/large/#{i.image_url}", :alt => i.image_url )%>
+				<% end %>
 			
-			<div class="social">
-				<iframe src="http://www.facebook.com/plugins/like.php?app_id=131157443624950&amp;href=http%3A%2F%2Fuwdesign2011.com%2Fpeople%2F<%= @person.id %>%23<%= project.name.downcase.gsub(/ /,'_') %>&amp;send=false&amp;layout=button_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:21px;" allowTransparency="true"></iframe>
-			</div> <!-- end .social -->
+				<div class="social">
+					<iframe src="http://www.facebook.com/plugins/like.php?app_id=131157443624950&amp;href=http%3A%2F%2Fuwdesign2011.com%2Fpeople%2F<%= @person.id %>%23<%= project.name.downcase.gsub(/ /,'_') %>&amp;send=false&amp;layout=button_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:21px;" allowTransparency="true"></iframe>
+				</div> <!-- end .social -->
 						
-			<p class="group_members project_text">Collaborated with
-			<% d.people.sort! { |a,b| a.lname.downcase <=> b.lname.downcase }.each_with_index do |p, i| %>
-				<% if p.id != @person.id %>
+				<p class="group_members project_text">Collaborated with
+				<% d.people.sort! { |a,b| a.lname.downcase <=> b.lname.downcase }.each_with_index do |p, i| %>
+					<% if p.id != @person.id %>
 				
-					<% if i < d.people.count - 1 %>
-						<%= (link_to "#{p.fname} #{p.lname}", person_path(p.id)) + ', '%>
-					<% else %>
-						<%= 'and '%>
-						<%= (link_to "#{p.fname} #{p.lname}", person_path(p.id)) + '. '%>
+						<% if i < d.people.count - 1 %>
+							<%= (link_to "#{p.fname} #{p.lname}", person_path(p.id)) + ', '%>
+						<% else %>
+							<%= 'and '%>
+							<%= (link_to "#{p.fname} #{p.lname}", person_path(p.id)) + '. '%>
+						<% end %>
 					<% end %>
 				<% end %>
-			<% end %>
-			<% if d.nongraduating_people.count > 0 %>
-			Outside collaborators: 
-			<% d.nongraduating_people.sort! { |a,b| a.name.downcase <=> b.name.downcase }.each_with_index do |p, i| %>
-				
-
-					<% if i < d.nongraduating_people.count - 1 %>
-						<%= p.name + ', ' %>
-					<% else %>
-						<%= 'and '%>
-						<%= p.name + '.' %>
+				<% if d.nongraduating_people.count > 0 %>
+					Outside collaborators: 
+					<% d.nongraduating_people.sort! { |a,b| a.name.downcase <=> b.name.downcase }.each_with_index do |p, i| %>
+						<% if i < d.nongraduating_people.count - 1 %>
+							<%= p.name + ', ' %>
+						<% else %>
+							<%= 'and '%>
+							<%= p.name + '.' %>
+						<% end %>
 					<% end %>
-			<% end %>
-			</p>
+					
 			
+				<% end %>
+				</p>
 			<% end %>
+			
 		<% else %>
 			<% project.videos.each do |video| %>
 			<div class="video">
