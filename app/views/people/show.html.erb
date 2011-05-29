@@ -30,14 +30,28 @@
 			<p class="group_members project_text">Collaborated with
 			<% d.people.sort! { |a,b| a.lname.downcase <=> b.lname.downcase }.each_with_index do |p, i| %>
 				<% if p.id != @person.id %>
-				<%= link_to "#{p.fname} #{p.lname}", person_path(p.id)  %>
 				
 					<% if i < d.people.count - 1 %>
-						<%= ', '%>
+						<%= (link_to "#{p.fname} #{p.lname}", person_path(p.id)) + ', '%>
+					<% else %>
+						<%= 'and '%>
+						<%= (link_to "#{p.fname} #{p.lname}", person_path(p.id)) + '. '%>
 					<% end %>
 				<% end %>
 			<% end %>
+			Outside collaborators: 
+			<% d.nongraduating_people.sort! { |a,b| a.name.downcase <=> b.name.downcase }.each_with_index do |p, i| %>
+				
+
+					<% if i < d.nongraduating_people.count - 1 %>
+						<%= p.name + ', ' %>
+					<% else %>
+						<%= 'and '%>
+						<%= p.name + '.' %>
+					<% end %>
+			<% end %>
 			</p>
+			
 			<% end %>
 		<% else %>
 			<% project.videos.each do |video| %>
@@ -55,8 +69,17 @@
 
 		
 
-		<p class="see_more project_text">See more projects in <% project.categories.each_with_index do |category, i| %><%= link_to category.name + " Design", projects_path(:anchor => category.name.downcase) %><% if i==0%><%= ', ' %><% else %><%= '.' %><% end %>
-		<% end %></p>
+		<p class="see_more project_text">See more projects in 
+		<% project.categories.each_with_index do |category, i| %>
+			
+			<% if i < project.categories.count-1 %>
+				<%= link_to category.name + " Design", projects_path(:anchor => category.name.downcase) %>
+				<%= ' or ' %>
+			<% else %>
+				<%= (link_to category.name + " Design", projects_path(:anchor => category.name.downcase)) + '.' %>
+			<% end %>
+		<% end %>
+		</p>
 		<div class="clear"></div>
 	</div> <!-- end #<%= project.name.downcase.gsub(/ /,'_') %> -->
 	<% end %>
