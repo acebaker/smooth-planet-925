@@ -21,6 +21,7 @@
 		<iframe src="http://www.facebook.com/plugins/like.php?app_id=131157443624950&amp;href=http%3A%2F%2Fuwdesign2011.com%2Fgroup_projects%2F<%= @project.id %>&amp;send=false&amp;layout=button_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:21px;" allowTransparency="true"></iframe>
 	</div> <!-- end .social -->
 	
+	<% if @project.nongraduating_people.count > 0 %>
 	<p class="group_members project_text">Outside collaborators: 
 	<% @project.nongraduating_people.sort! { |a,b| a.name.downcase <=> b.name.downcase }.each_with_index do |p, i| %>
 		
@@ -33,6 +34,7 @@
 			<% end %>
 	<% end %>
 	</p>
+	<% end %>
 	
 	<p class="see_more project_text">See more projects in
 		<% @project.categories.each_with_index do |category, i| %>

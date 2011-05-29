@@ -39,6 +39,7 @@
 					<% end %>
 				<% end %>
 			<% end %>
+			<% if d.nongraduating_people.count > 0 %>
 			Outside collaborators: 
 			<% d.nongraduating_people.sort! { |a,b| a.name.downcase <=> b.name.downcase }.each_with_index do |p, i| %>
 				
