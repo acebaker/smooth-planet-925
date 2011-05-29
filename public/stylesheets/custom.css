@@ -379,11 +379,19 @@ img.arrow {
 	font-weight: bold;
 }
 
-.showfollow, #peoplenav {
+.showfollow {
 	font-size: 10px;
 	position: fixed;
 	bottom: 56px;
 	left: 36px;
+}
+
+
+#peoplenav {
+	font-size: 10px;
+	position: absolute;
+	bottom: -100px;
+	left: 0px;
 }
 
 
@@ -443,7 +451,6 @@ img.arrow {
 	font-size: 10px;
 	display: block;
 	clear: both;
-	margin-bottom: 60px;
 	float: left;
 }
 .profiles_text {
