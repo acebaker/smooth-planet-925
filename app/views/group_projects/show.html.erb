@@ -28,8 +28,10 @@
 
 			<% if i < @project.nongraduating_people.count - 1 %>
 				<%= p.name + ', ' %>
-			<% else %>
+			<% elsif @project.nongraduating_people.count > 1 %>
 				<%= 'and '%>
+				<%= p.name + '.' %>
+			<% else %>
 				<%= p.name + '.' %>
 			<% end %>
 	<% end %>
