@@ -325,6 +325,7 @@ img.theshowtitles {
 
 .theshowline{
 	margin-bottom:60px;
+	width: 700px;
 }
 
 img#seeyou{
@@ -463,6 +464,10 @@ img.arrow {
 	margin-right:40px;
 	width: 220px;
 	height: 150px;
+}
+
+.video {
+	margin-bottom: 40px;
 }
 
 .facultyinfo .profiles .titles{

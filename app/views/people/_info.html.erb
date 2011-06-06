@@ -17,13 +17,13 @@
 		<% jtext = "View Portfolio" %>
 		<% jlink = "http://" + @person.contact.html_safe %>
 	<% end %>
-	<p class="person_contact"><%= link_to jtext, jlink %></p>
+	<p class="person_contact"><%= link_to jtext, jlink, :target => '_blank' %></p>
 	
 	<nav class="person_projects">
 		<ul>
 		<% @person.projects.each do |project| %>
 		
-		<% if project.isCapstone != 1 %>
+		
 		<a href='/#<%= project.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,'').gsub(/;/,'').gsub(/&/,'').gsub(/,/,'') %>' class="scroll">
 			<li><% if project.nav_name.nil? %>
 				<%= project.name.html_safe %>
@@ -33,7 +33,6 @@
 				
 			<% end %>
 			</li></a>
-		<% end %>
 		<% end %>
 
 		</ul>

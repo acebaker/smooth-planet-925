@@ -1,4 +1,4 @@
-<% if project.isCapstone != 1 && project.isGroup != 1 %>
+<% if project.isGroup != 1 %>
 	<div class="work">
 		<% project.people.each do |person| %>
 			<% @pageuri = person.id %>

@@ -2,7 +2,6 @@
 
 <% @person.projects.each do |project| %>
 
-<% if project.isCapstone != 1%>
 	<div id="<%= project.name.downcase.gsub(/ /,'_').gsub(/:/,'').gsub(/#/,'').gsub(/;/,'').gsub(/&/,'').gsub(/,/,'') %>" class="project">
 		<h2 class="project_name"><%= project.name.html_safe %></h2>
 		
@@ -87,6 +86,5 @@
 		<div class="clear"></div>
 	</div> <!-- end #<%= project.name.downcase.gsub(/ /,'_') %> -->
 	<% end %>
-<% end %>
 <div id="projects_end"></div>
 <div class="clear"></div>
